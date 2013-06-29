@@ -1,0 +1,206 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<translation xmlns='http://www-hc/~hadsa/CF_convention'>
+  <stash xmlns='http://www-hc/~hadsa/CF_convention/standard_name_20010305.html'>
+    <submodel id='1' description='UM Atmosphere.'>
+      <section id='0' description='Primary Fields.'>
+        <item units='Pa' standard_name='pstar' id='001' description='PSTAR AFTER TIMESTEP'/>
+        <item units='m s-1' standard_name='u_compnt_of_wind' id='2' description='U COMPNT OF WIND AFTER TIMESTEP'/>
+        <item units='m s-1' standard_name='v_compnt_of_wind' id='3' description='V COMPNT OF WIND AFTER TIMESTEP'/>
+        <item units='1' standard_name='specific_humidity' id='10' description='SPECIFIC HUMIDITY AFTER TIMESTEP'/>
+        <item units='kg/m2' standard_name='snowfall_amount' id='23' description='SNOW AMOUNT AFTER TIMESTEP KG/M2'/>
+        <item units='K' standard_name='surface_temperature' id='24' description='SURFACE TEMPERATURE AFTER TIMESTEP'/>
+        <item units='m' standard_name='bounday_layer_depth' id='25' description='BOUNDARY LAYER DEPTH AFTER TIMESTEP'/>
+        <item units='***' standard_name='sea_ice_fraction' id='31' description='SEA ICE FRACTION AFTER TIMESTEP'/>
+        <item units='***' standard_name='sulphur_dioxide_emissions' id='58' description='SULPHUR DIOXIDE EMISSIONS'/>
+        <item units='***' standard_name='dimethyl_sulphide_emissions' id='59' description='DIMETHYL SULPHIDE EMISSIONS'/>
+        <item units='1' standard_name='so2_mass_mixing_ratio' id='101' description='SO2 MASS MIXING RATIO AFTER TSTEP'/>
+        <item units='1' standard_name='dimethyl_sulphide_mass_mixing_ratio' id='102' description='DIMETHYL SULPHIDE MIX RAT AFTER TS'/>
+        <item units='1' standard_name='so4_aitken_mode_aerosol' id='103' description='SO4 AITKEN MODE AEROSOL AFTER TSTEP'/>
+        <item units='1' standard_name='so4_accum_mode_aerosol' id='104' description='SO4 ACCUM. MODE AEROSOL AFTER TSTEP'/>
+        <item units='1' standard_name='so4_dissolved_aerosol' id='105' description='SO4 DISSOLVED AEROSOL AFTER TSTEP'/>
+        <item units='1' standard_name='h2o2_mass_mixing_ratio' id='106' description='H2O2 MASS MIXING RATIO AFTER TSTEP'/>
+        <item units='kg m-2 s-1' standard_name='natural_so2_emissions' id='121' description='3D NATURAL SO2 EMISSIONS KG/M2/S'/>
+        <item units='***' standard_name='oh_concentrations' id='122' description='3D OH CONCENTRATIONS IN MCULES/CC'/>
+        <item units='***' standard_name='ho2_concentrations' id='123' description='3D HO2 CONCENTRATIONS IN MCULES/CC'/>
+        <item units='***' standard_name='h2o2_mixing_ratio_limit_field' id='124' description='3D H2O2 MIX RATIO LIMIT FIELD'/>
+        <item units='***' standard_name='ozone_mixing_ratio_for_sulphur_cycle' id='125' description='3D OZONE MIX RAT FOR SULPHUR CYCLE'/>
+        <item units='kg m-2 s-1' standard_name='high_level_so2_emissions' id='126' description='HIGH LEVEL SO2 EMISSIONS KG/M2/S'/>
+      </section>
+      <section id='1' description='S.W Radiation.'>
+        <item units='W m-2' standard_name='net_down_surface_sw_flux' id='201' description='NET DOWN SURFACE SW FLUX: SW TS ONLY'/>
+        <item units='W m-2' standard_name='net_down_surface_sw_rad_flux_open_sea' id='203' description='NET DOWN SW RAD FLUX: OPEN SEA'/>
+        <item units='W m-2' standard_name='net_down_surface_sw_flux_below_690nm' id='204' description='NET DOWN SURFACE SW FLUX BELOW 690NM'/>
+        <item units='W m-2' standard_name='incoming_sw_rad_flux' id='207' description='INCOMING SW RAD FLUX (TOA): ALL TSS'/>
+        <item units='W m-2' standard_name='outgoing_sw_rad_flux' id='208' description='OUTGOING SW RAD FLUX (TOA)'/>
+        <item units='W m-2' standard_name='clear-sky_upward_sw_flux' id='209' description='CLEAR-SKY (II) UPWARD SW FLUX (TOA)'/>
+        <item units='W m-2' standard_name='clear-sky_down_surface_sw_flux' id='210' description='CLEAR-SKY (II) DOWN SURFACE SW FLUX'/>
+        <item units='W m-2' standard_name='clear-sky_upward_surface_sw_flux' id='211' description='CLEAR-SKY (II) UP SURFACE SW FLUX'/>
+        <item units='***' standard_name='layer_cld_liq_re_cld_wgt' id='221' description='LAYER CLD LIQ RE * LAYER CLD WEIGHT'/>
+        <item units='***' standard_name='layer_cld_weight_for_microphysics' id='223' description='LAYER CLOUD WEIGHT FOR MICROPHYSICS'/>
+        <item units='W m-2' standard_name='total_down_surface_sw_flux' id='235' description='TOTAL DOWNWARD SURFACE SW FLUX'/>
+        <item units='***' standard_name='droplet_number_conc_lyr_cloud_wgt' id='241' description='DROPLET NUMBER CONC * LYR CLOUD WGT'/>
+        <item units='***' standard_name='layer_cloud_lwc_layer_cloud_wgt' id='242' description='LAYER CLOUD LWC * LAYER CLOUD WEIGHT'/>
+        <item units='***' standard_name='so4_ccn_mass_conc_cond_sampling_wgt' id='243' description='SO4 CCN KG/M3 * COND SAMPLING WEIGHT'/>
+        <item units='***' standard_name='conditional_sampling_weight' id='244' description='CONDITIONAL SAMPLING WEIGHT'/>
+        <item units='***' standard_name='2-D_effective_radius_2-D_re_wgt' id='245' description='2-D RE DISTRIBUTION * 2-D RE WEIGHT'/>
+        <item units='***' standard_name='wgt_for_2-D_effective_radius' id='246' description='WEIGHT FOR 2-D RE DISTRIBUTION'/>
+        <item units='***' standard_name='weighted_sw_layer_cloud_extinction' id='262' description='WEIGHTED SW LAYER CLOUD EXTINCTION'/>
+        <item units='***' standard_name='weights_for_layer_cld_sw_extinction' id='263' description='WEIGHTS FOR LAYER CLOUD SW EXTINCTION'/>
+        <item units='***' standard_name='weighted_sw_conv_cloud_extinction' id='264' description='WEIGHTED SW CONV CLOUD EXTINCTION'/>
+        <item units='***' standard_name='weights_for_conv_cld_sw_extinction' id='265' description='WEIGHTS FOR CONV COLD SW EXTINCTION'/>
+      </section>
+      <section id='2' description='L.W Radiation.'>
+        <item units='W m-2' standard_name='net_down_surface_lw_rad_flux' id='201' description='NET DOWN SURFACE LW RAD FLUX'/>
+        <item units='W m-2' standard_name='net_down_lw_rad_flux_open_sea' id='203' description='NET DOWN LW RAD FLUX: OPEN SEA'/>
+        <item units='***' standard_name='total_cloud_fraction' id='204' description='TOTAL CLOUD AMOUNT IN LW RADIATION'/>
+        <item units='W m-2' standard_name='outgoing_lw_rad_flux' id='205' description='OUTGOING LW RAD FLUX (TOA)'/>
+        <item units='W m-2' standard_name='clear-sky_upward_lw_flux' id='206' description='CLEAR-SKY (II) UPWARD LW FLUX (TOA)'/>
+        <item units='W m-2' standard_name='total_downward_surface_lw_flux' id='207' description='DOWNWARD LW RAD FLUX: SURFACE'/>
+        <item units='W m-2' standard_name='clear-sky_down_surface_lw_flux' id='208' description='CLEAR-SKY (II) DOWN SURFACE LW FLUX'/>
+        <item units='***' standard_name='weighted_layer_cloud_absorptivity' id='262' description='WEIGHTED LAYER CLOUD ABSORPTIVITY'/>
+        <item units='***' standard_name='weights_for_layer_cloud_absorptivity' id='263' description='WEIGHTS FOR LAYER CLOUD ABSORPTIVITY'/>
+        <item units='***' standard_name='weighted_conv_cloud_absorptivity' id='264' description='WEIGHTED CONV CLOUD ABSORPTIVITY'/>
+        <item units='***' standard_name='weights_for_conv_cloud_absorptivity' id='265' description='WEIGHTS FOR CONV CLOUD ABSORPTIVITY'/>
+        <item units='***' standard_name='isccp_cloud_weights' id='269' description='ISCCP CLOUD WEIGHTS'/>
+        <item units='***' standard_name='isccp_cloud_0-1-le-tau' id='270' description='ISCCP CLOUD 0.1 LE TAU'/>
+        <item units='***' standard_name='isccp_cloud_tau-lt-0-1' id='271' description='ISCCP ClOUD TAU LT 0.1'/>
+        <item units='***' standard_name='isccp_cloud_0-1-le-tau-lt-1-3' id='272' description='ISCCP CLOUD 0.1 LE TAU LT 1.3'/>
+        <item units='***' standard_name='isccp_cloud_1-3-le-tau-lt-3-6' id='273' description='ISCCP CLOUD 1.3 LE TAU LT 3.6'/>
+        <item units='***' standard_name='isccp_cloud_3-6-le-tau-lt-9-4' id='274' description='ISCCP CLOUD 3.6 LE TAU LT 9.4'/>
+        <item units='***' standard_name='isccp_cloud_9-4-le-tau-lt-23' id='275' description='ISCCP CLOUD 9.4 LE TAU LT 23'/>
+        <item units='***' standard_name='isccp_cloud_23-le-tau-lt-60' id='276' description='ISCCP CLOUD 23 LE TAU LT 60'/>
+        <item units='***' standard_name='isccp_cloud_60-le-tau' id='277' description='ISCCP CLOUD 60 LE TAU'/>
+        <item units='1' standard_name='ozone_concentration' id='278' description='OZONE CONCENTRATION'/>
+      </section>
+      <section id='3' description='Boundary Layer/Surface.'>
+        <item units='m' standard_name='roughness_length' id='026' description='ROUGHNESS LEN. AFTER B.L. (SEE DOC)'/>
+        <item units='W m-2' standard_name='heat_flux_through_sea_ice' id='201' description='HEAT FLUX THROUGH SEA ICE (GBM) W/M2'/>
+        <item units='W m-2' standard_name='heat_flux_surface_deep_soil_lev' id='202' description='HEAT FLUX FROM SURFACE TO DEEP SOIL LEVEL'/>
+        <item units='w m-2' standard_name='surface_heat_flux' id='217' description='SURFACE HEAT FLUX W/M2'/>
+        <item units='kg m-2 s-1' standard_name='surface_total_moisture_flux' id='223' description='SURFACE TOTAL MOISTURE FLUX KG/M2/S'/>
+        <item units='W m-2' standard_name='wind_mixing_energy_flux_into_sea' id='224' description="WIND MIXING EN'GY FLUX INTO SEA W/M2"/>
+        <item units='m s-1' standard_name='10m_wind_u-comp' id='225' description='10 METRE WIND U-COMP B GRID'/>
+        <item units='m s-1' standard_name='10m_wind_v-comp' id='226' description='10 METRE WIND V-COMP B GRID'/>
+        <item units='W m-2' standard_name='surface_sens_heat_flux_from_sea' id='228' description='SURFACE SH FLUX FROM SEA (GBM) W/M2'/>
+        <item units='kg m-2 ts-1' standard_name='evaporation_from_soil_surface' id='229' description='EVAP FROM SOIL SURF -AMOUNT KG/M2/TS'/>        
+        <item units='kg m-2 s-1' standard_name='evaporation_from_sea' id='232' description='EVAPORATION FROM SEA (GBM) KG/M2/S'/>
+        <item units='W m-2' standard_name='surface_latent_heat_flux' id='234' description='SURFACE LATENT HEAT FLUX W/M2'/>
+        <item units='K' standard_name='temperature_at_1-5m' id='236' description='TEMPERATURE AT 1.5M'/>
+        <item units='1' standard_name='specific_humidity_at_1-5m' id='237' description='SPECIFIC HUMIDITY AT 1.5M'/>
+        <item units='%' standard_name='relative_humidity_at_1-5m' id='245' description='RELATIVE HUMIDITY AT 1.5M'/>
+        <item units='m s-1' standard_name='wind_speed_at_10m' id='249' description='WIND SPEED AT 10 METRES (WIND GRID)'/>
+        <item units='K' standard_name='theta-l_at_1-5m' id='254' description='THETA L AT 1.5M'/>
+        <item units='1' standard_name='q-t_at_1-5m' id='255' description='Q-T AT 1.5M'/>
+        <item units='***' standard_name='canopy_conductance' id='259' description='CANOPY CONDUCTANCE M/S'/>
+        <item units='kg m-2 s-1' standard_name='so2_surface_dry_dep_flux' id='270' description='SO2 SURFACE DRY DEP FLUX'/>
+        <item units='kg m-2 s-1' standard_name='so2_surface_ait_dry_dep_flux' id='271' description='SO4 AIT SURF DRY DEP FLUX'/>
+        <item units='kg m-2 s-1' standard_name='so2_surface_acc_dry_dep_flux' id='272' description='SO4 ACC SURF DRY DEP FLUX'/>
+        <item units='kg m-2 s-1' standard_name='so2_surface_dis_dry_dep_flux' id='273' description='SO4 DIS SURF DRY DEP FLUX'/>
+        <item units='kg m-2 s-1' standard_name='evaporation_from_soil_surface' id='296' description='EVAPORATION FROM SOIL SURFACE'/>
+        <item units='kg m-2 s-1' standard_name='evaporation_from_canopy_rate' id='297' description='EVAPORTATION FROM CANOPY RATE'/>
+        <item units='kg m-2 s-1' standard_name='sublimation_from_surface_rate' id='298' description='SUBLIMATION FROM SURFACE RATE'/>
+        <item units='kg m-2 s-1' standard_name='transpiration_rate' id='299' description='TRANSPIRATION_RATE'/>
+        <item units='kg m-2' standard_name='potential_evaporation' id='311' description='POTENTIAL EVAPORATION'/>
+        <item units='***' standard_name='soil_moisture_availability_factor' id='313' description='SOIL MOISTURE AVAILABILITY FACTOR'/>
+      </section>
+      <section id='4' description='Large-Scale Precipitation.'>
+        <item units='kg m-2 s-1' standard_name='large_scale_rainfall_rate' id='203' description='LARGE SCALE RAINFALL RATE KG/M2/S'/>
+        <item units='kg m-2 s-1' standard_name='large_scale_snowfall_rate' id='204' description='LARGE SCALE SNOWFALL RATE KG/M2/S'/>
+        <item units='***' standard_name='cloud_liquid_water_content' id='205' description='CLOUD LIQUID WATER AFTER LS PRECIP'/>
+        <item units='***' standard_name='cloud_ice_content' id='206' description='CLOUD ICE CONTENT AFTER LS PRECIP'/>
+        <item units='kg m-2 s-1' standard_name='so2_scavenged_by_ls_ppn' id='216' description='SO2 SCAVENGED BY LS PPN'/>
+        <item units='kg m-2 s-1' standard_name='so4_aitken_scavenged_by_ls_ppn' id='217' description='SO4 AITKEN SCAVENGED BY LS PPN'/>
+        <item units='kg m-2 s-1' standard_name='so4_accum_scavenged_by_ls_ppn' id='218' description='SO4 ACCUM. SCAVENGED BY LS PPN'/>
+        <item units='kg m-2 s-1' standard_name='so4_dissolved_scavenged_by_ls_ppn' id='219' description='SO4 DISS. SCAVENGED BY LS PPN'/>
+      </section>
+      <section id='5' description='Convection.'>
+        <item units='kg m-2 s-1' standard_name='convective_rainfall_rate' id='205' description='CONVECTIVE RAINFALL RATE KG/M2/S'/>
+        <item units='kg m-2 s-1' standard_name='convective_snowfall_rate' id='206' description='CONVECTIVE SNOWFALL RATE KG/M2/S'/>
+        <item units='K' standard_name='temperature_after_convection' id='209' description='TEMPERATURE AFTER CONVECTION'/>
+        <item units='***' standard_name='conv_cloud_amount' id='212' description='CONV. CLOUD AMOUNT ON EACH MODEL LEV'/>
+        <item units='kg m-2 s-1' standard_name='total_precipitation_rate' id='216' description='TOTAL PRECIPITATION RATE KG/M2/S'/>
+        <item units='***' standard_name='grid_mean_conv_cloud_water' id='234' description='GRIDBOX MEAN CONV. CLOUD WATER PATH'/>
+        <item units='kg m-2 s-1' standard_name='so2_scavenged_conv_ppn' id='238' description='SO2 SCAVENGED BY CONV PPN'/>
+        <item units='kg m-2 s-1' standard_name='so4_aitken_scavenged_conv_ppn' id='239' description='SO4 AITKEN SCAVENGED BY CONV PPN'/>
+        <item units='kg m-2 s-1' standard_name='so4_accum_scavenged_conv_ppn' id='240' description='SO4 ACCUM. SCAVENGED BY CONV PPN'/>
+        <item units='kg m-2 s-1' standard_name='so4_dissolved_scavenged_conv_ppn' id='241' description='SO4 DISS.SCAVENGED BY CONV PPN'/>
+      </section>
+      <section id='8' description='Hydrology.'>
+        <item units='kg m-2' standard_name='snow_mass_after_hydrology' id='023' description='SNOW MASS AFTER HYDROLOGY KG/M2'/>
+        <item units='kg m-2 ts-1' standard_name='snow_melt_amount' id='201' description='LAND SNOW MELT AMOUNT KG/M2/TS'/>
+        <item units='kg m-2 ts-1' standard_name='surface_runoff_amount' id='204' description='SURFACE RUNOFF AMOUNT KG/M2/TS'/>
+        <item units='kg m-2 ts-1' standard_name='sub_surface_runoff_amount' id='205' description='SUB-SURFACE RUNOFF AMOUNT KG/M2/TS'/>
+        <item units='kg m-2' standard_name='total_soil_moisture_content' id='208' description='SOIL MOISTURE CONTENT'/>
+        <item units='kg m-2' standard_name='canopy_water_content' id='209' description='CANOPY WATER CONTENT'/>
+        <item units='kg m-2' standard_name='soil_moisture_content_layer' id='223' description='SOIL MOISTURE CONTENT IN A LAYER'/>
+        <item units='K' standard_name='deep_soil_temp' id='225' description='DEEP SOIL TEMP. AFTER HYDROLOGY DEGK'/>
+        <item units='***' standard_name='unfrozen_soil_moisture_fraction' id='229' description='UNFROZEN SOIL MOISTURE FRACTION'/>
+        <item units='***' standard_name='frozen_soil_moisture_fraction' id='230' description='FROZEN SOIL MOISTURE FRACTION'/>
+        <item units='kg m-2 s-1' standard_name='snow_melt_rate_land' id='231' description='SNOW MELT RATE (LAND)'/>
+        <item units='kg m-2 s-1' standard_name='canopy_throughfall_rate' id='233' description='CANOPY THROUGHFALL RATE'/>
+        <item units='kg m-2 s-1' standard_name='surface_runoff_rate' id='234' description='SURFACE RUNOFF RATE KG/M2/S'/>
+        <item units='kg m-2 s-1' standard_name='subsurface_runoff_rate' id='235' description='SUB-SURFACE RUNOFF RATE KG/M2/S'/>
+      </section>
+      <section id='9' description='Cloud scheme.'>
+        <item units='***' standard_name='bulk_cloud_amount' id='201' description='BULK CLOUD AMOUNT AFTER MAIN CLOUD'/>
+        <item units='1' standard_name='cloud_liquid_water_content' id='206' description='CLOUD LIQUID WATER AFTER MAIN CLOUD'/>
+        <item units='1' standard_name='cloud_ice_content' id='207' description='CLOUD ICE CONTENT AFTER DYNAM CLOUD'/>
+        <item units='***' standard_name='critical_relative_humidity' id='282' description='CRITICAL RELATIVE HUMIDITY'/>
+      </section>
+      <section id='12' description='Primary field advection.'>
+        <item units='m s-1' standard_name='wind_w-comp' id='201' description='WIND W-COMPONENT (=W) (WIND GRID)'/>
+        <item units='Pa s-1' standard_name='lagrangian_tendency_of_air_pressure' id='202' description='OMEGA ON PRESSURE LEVELS'/>
+      </section>
+      <section id='15' description='Processed dynamics diags.'>
+        <item units='m s-1' standard_name='wind_u-comp' id='201' description='U WIND ON PRESSURE LEVELS B GRID'/>
+        <item units='m s-1' standard_name='wind_v-comp' id='202' description='V WIND ON PRESSURE LEVELS B GRID'/>
+        <item units='K kg-1 m-2 s-1' standard_name='ertel_potential_vorticity' id='214' description='ERTEL POTENTIAL VORTICITY(THETA LEV)'/>
+        <item units='m2 s-2' standard_name='u_by_v_wind' id='215' description='UxV (WIND GRID)'/>
+        <item units='K' standard_name='temperature_wind' id='216' description='TEMPERATURE (=T) (WIND GRID)'/>
+        <item units='m s-1 K' standard_name='u_by_t_wind' id='217' description='UxT (WIND GRID)'/>
+        <item units='m s-1 K' standard_name='v_by_t_wind' id='218' description='VxT (WIND GRID)'/>
+        <item units='K2' standard_name='t_squared_wind' id='219' description='T^2 (WIND GRID)'/>
+        <item units='m2 s-2' standard_name='u_squared_wind' id='220' description='U^2 WIND GRID'/>
+        <item units='m2 s-2' standard_name='v_squared_wind' id='221' description='V^2 WIND GRID'/>
+        <item units='m s-1' standard_name='wind_w-comp' id='222' description='WIND W-COMPONENT (=W)(WIND GRID)'/>
+        <item units='m s-1 K' standard_name='w_by_t_on_wind_grid' id='223' description='WxT ON (WIND GRID)'/>
+        <item units='m2 s-2' standard_name='w_by_u_on_wind_grid' id='224' description='WxU ON (WIND GRID)'/>
+        <item units='m2 s-2' standard_name='w_by_v_on_wind_grid' id='225' description='WxV ON (WIND GRID)'/>
+        <item units='1' standard_name='specific_humidity_wind_grid' id='226' description='SPECIFIC HUMIDITY (=Q) (WIND GRID)'/>
+        <item units='m s-1' standard_name='q_by_u_on_wind_grid' id='227' description='QxU (WIND GRID)'/>
+        <item units='m s-1' standard_name='q_by_v_on_wind_grid' id='228' description='QxV (WIND GRID)'/>
+        <item units='m s-1' standard_name='q_by_w_on_wind_grid' id='235' description='QxW (WIND GRID)'/>
+        <item units='m' standard_name='geopotential_height_wind' id='238' description='GEOPOTENTIAL HEIGHT (=Z) (WIND GRID)'/>
+        <item units='m2 s-1' standard_name='u_by_z_10-6' id='239' description='UxZx10^6 (WIND GRID)'/>
+        <item units='m2 s-1' standard_name='v_by_z_10-6' id='240' description='VxZx10^6 (WIND GRID)'/>
+        <item units='m2 s-2' standard_name='w_squared_wind_grid' id='242' description='W^2 (WIND GRID)'/>
+      </section>
+      <section id='16' description='Processed physics diags.'>
+        <item units='m' standard_name='geopotential_height' id='202' description='GEOPOTENTIAL HEIGHT (=Z)'/>
+        <item units='K' standard_name='temperature' id='203' description='TEMPERATURE (=T)'/>
+        <item units='%' standard_name='relative_humidity' id='204' description='RELATIVE HUMIDITY'/>
+        <item units='Pa' standard_name='pmsl' id='222' description='PRESSURE AT MEAN SEA LEVEL'/>
+        <item units='m2' standard_name='z-squared' id='224' description='Z^2'/>
+      </section>
+      <section id='17' description='***'>
+        <item units='1' standard_name='MSA' id='203' description='MSA'/>
+      </section>
+    </submodel>
+    <submodel id='3' description='UM Slab.'/>
+    <submodel id='4' description='UM Wave.'/>
+  </stash>
+  <field xmlns="http://www-nwp/~frhm/pp_package/codedoc/docpo/@FCODES.txt.txt" description="PP field codes which do not have stash codes.">
+    <item PP_field_code="0" standard_name="testing_only" units="SI"/>
+    <item PP_field_code="1" standard_name="height" units="m"/>
+    <item PP_field_code="6" standard_name="boundary_layer_height" units="1"/>
+    <item PP_field_code="8" standard_name="pressure" units="hPa"/>
+    <item PP_field_code="9" standard_name="hybrid_sigma_pressure" units="1"/>
+    <item PP_field_code="17" standard_name="dew_point_temperature"  units="K"/>
+    <item PP_field_code="19" standard_name="potential_temperature" units="K"/>
+    <item PP_field_code="601" standard_name="sea_water_potential_temperature" units="K"/>
+    <item PP_field_code="608" standard_name="sea_surface_elevation" units="m"/>
+    <item PP_field_code="617" standard_name="rigid_lid_pressure" units="hPa"/>
+    <item PP_field_code="699" standard_name="ocean_topography" units="m"/>
+    <item PP_field_code="942" standard_name="meridional_overturning_zonal_mean_streamfunction" units="cm3/s"/>
+  </field>
+</translation>

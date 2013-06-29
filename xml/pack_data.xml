@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<pack_data>
+    <!- Packing data example - possible attributes are:>
+    <!- pack, skip, crop and avg>
+    <item section='16' id='222' pack='2'/>
+    <item section='3' id='236' pack='1'/>
+</pack_data>

@@ -1,0 +1,1140 @@
+<attributes>
+	<levels>
+		<level type=1>
+			<standard_name> height </standard_name>
+			<units> m </units>
+			<direction> up </direction>
+		</level>
+    	<level type=8>
+        	<standard_name> air_pressure </standard_name>
+	        <units> hPa </units>
+    	    <direction> down </direction>
+	    </level>
+        <level type=9>
+            <standard_name> atmosphere_hybrid_sigma_pressure_coordinate </standard_name>
+			<direction> down </direction>
+		</level>
+		<level type=10>
+			<standard_name> atmosphere_sigma_coordinate </standard_name>
+			<direction> down </direction>
+		</level>
+        <level type=65>
+            <standard_name> atmosphere_hybrid_height_coordinate </standard_name>
+			<direction> down </direction>
+		</level>		
+		<level type=128>
+			<standard_name>height</standard_name>
+			<units>m</units>
+			<direction>up</direction>
+		</level>
+		<level type=129>
+			<standard_name>height</standard_name>
+			<units>m</units>
+			<direction>up</direction>
+		</level>
+		<level type=130>
+			<standard_name>tropopause_altitude</standard_name>
+			<units>m</units>
+		</level>
+		<level type=131>
+			<standard_name>maximum_wind_level</standard_name>
+		</level>
+		<level type=132>
+			<standard_name>freezing_level</standard_name>
+		</level>
+		<level type=142>
+			<standard_name>upper_hybrid_level</standard_name>
+		</level>
+		<level type=143>
+			<standard_name>lower_hybrid_level</standard_name>
+		</level>
+		<level type=176>
+			<standard_name>latitude</standard_name>
+		</level>
+		<level type=177>
+			<standard_name>longitude</standard_name>
+		</level>
+	</levels>
+	<variables>
+		<variable stash_item=1 stash_section=0>
+			<field_code>8</field_code>
+			<standard_name>surface_air_pressure</standard_name>
+			<long_name>PSTAR AFTER TIMESTEP</long_name>
+			<units>Pa</units>
+		</variable>
+		<variable stash_item=10 stash_section=0>
+			<field_code>95</field_code>
+			<standard_name>specific_humidity</standard_name>
+			<long_name>SPECIFIC HUMIDITY AFTER TIMESTEP</long_name>
+			<units>1</units>
+		</variable>
+		<variable stash_item=101 stash_section=0>
+			<field_code>1374</field_code>
+			<standard_name>sea_water_potential_temperature</standard_name>
+			<long_name>POTENTIAL TEMPERATURE (OCEAN)  DEG.C</long_name>
+			<units>K</units>
+		</variable>
+		<variable stash_item=102 stash_section=0>
+			<field_code>1373</field_code>
+			<standard_name>sea_water_salinity</standard_name>
+			<long_name>SALINITY (OCEAN)       (PSU-35)/1000</long_name>
+			<units>1</units>
+		</variable>
+		<variable stash_item=103 stash_section=0>
+			<field_code>1370</field_code>
+			<standard_name>none</standard_name>
+			<long_name>SO4 AITKEN MODE AEROSOL AFTER TSTEP</long_name>
+			<units>1.0</units>
+		</variable>
+		<variable stash_item=104 stash_section=0>
+			<field_code>1371</field_code>
+			<standard_name>none</standard_name>
+			<long_name>SO4 ACCUM. MODE AEROSOL AFTER TSTEP</long_name>
+			<units>1.0</units>
+		</variable>
+		<variable stash_item=105 stash_section=0>
+			<field_code>1372</field_code>
+			<standard_name>none</standard_name>
+			<long_name>SO4 DISSOLVED AEROSOL AFTER TSTEP</long_name>
+			<units>1.0</units>
+		</variable>
+		<variable stash_item=11 stash_section=0>
+			<field_code>95</field_code>
+			<standard_name>mass_fraction_of_water_in_air</standard_name>
+			<long_name>QT IN THE EXTERNAL DUMP</long_name>
+			<units>1</units>
+		</variable>
+		<variable stash_item=121 stash_section=0>
+			<field_code>569</field_code>
+			<standard_name>baroclinic_eastward_sea_water_velocity</standard_name>
+			<long_name>BAROCLINIC U_VELOCITY (OCEAN)   CM/S</long_name>
+			<units>m s-1</units>
+		</variable>
+		<variable stash_item=122 stash_section=0>
+			<field_code>580</field_code>
+			<standard_name>baroclinic_northward_sea_water_velocity</standard_name>
+			<long_name>BAROCLINIC V_VELOCITY (OCEAN)   CM/S</long_name>
+			<units>m s-1</units>
+		</variable>
+		<variable stash_item=13 stash_section=0>
+			<field_code>34</field_code>
+			<standard_name>convective_cloud_area_fraction</standard_name>
+			<long_name>CONV CLOUD AMOUNT AFTER TIMESTEP</long_name>
+			<units>1</units>
+		</variable>
+		<variable stash_item=130 stash_section=0>
+			<field_code>611</field_code>
+			<standard_name>ocean_barotropic_streamfunction</standard_name>
+			<long_name>STREAMFUNCTION (OCEAN)         CM3/S</long_name>
+			<units>m3 s-1</units>
+		</variable>
+		<variable stash_item=132 stash_section=0>
+			<field_code>613</field_code>
+			<standard_name>tendency_of_ocean_barotropic_streamfunction</standard_name>
+			<long_name>STREAMFN TENDENCY (OCEAN)   CM3/S/TS</long_name>
+			<units>m3 s-2</units>
+		</variable>
+		<variable stash_item=134 stash_section=0>
+			<field_code>608</field_code>
+			<standard_name>sea_surface_elevation</standard_name>
+			<long_name>SURFACE ELEVATION (OCEAN)         CM</long_name>
+			<units>m</units>
+		</variable>
+		<variable stash_item=135 stash_section=0>
+			<field_code>711</field_code>
+			<standard_name>barotropic_eastward_sea_water_velocity</standard_name>
+			<long_name>BAROTROPIC U_VELOCITY (OCEAN)   CM/S</long_name>
+			<units>m s-1</units>
+		</variable>
+		<variable stash_item=136 stash_section=0>
+			<field_code>712</field_code>
+			<standard_name>barotropic_northward_sea_water_velocity</standard_name>
+			<long_name>BAROTROPIC V_VELOCITY (OCEAN)   CM/S</long_name>
+			<units>m s-1</units>
+		</variable>
+		<variable stash_item=137 stash_section=0>
+			<field_code>653</field_code>
+			<standard_name>ocean_mixed_layer_thickness</standard_name>
+			<long_name>MIXED LAYER DEPTH (OCEAN)          M</long_name>
+			<units>m</units>
+		</variable>
+		<variable stash_item=139 stash_section=0>
+			<field_code>733</field_code>
+			<standard_name>downward_eastward_stress_at_sea_ice_base</standard_name>
+			<long_name>ISX   X OCEAN/ICE STRESS (ICE)  N/M2</long_name>
+			<units>Pa</units>
+		</variable>
+		<variable stash_item=140 stash_section=0>
+			<field_code>734</field_code>
+			<standard_name>downward_northward_stress_at_sea_ice_base</standard_name>
+			<long_name>ISY   Y OCEAN/ICE STRESS  (ICE) N/M2</long_name>
+			<units>Pa</units>
+		</variable>
+		<variable stash_item=141 stash_section=0>
+			<field_code>688</field_code>
+			<standard_name>surface_snow_thickness_where_sea_ice</standard_name>
+			<long_name>SNOW DEPTH (OCEAN)                 M</long_name>
+			<units>m</units>
+		</variable>
+		<variable stash_item=143 stash_section=0>
+			<field_code>684</field_code>
+			<standard_name>upward_sea_ice_basal_heat_flux</standard_name>
+			<long_name>GBM HEAT FLUX:OCEAN TO ICE(OCN) W/M2</long_name>
+			<units>W m-2</units>
+		</variable>
+		<variable stash_item=146 stash_section=0>
+			<field_code>683</field_code>
+			<standard_name>sea_ice_area_fraction</standard_name>
+			<long_name>AICE : ICE CONCENTRATION</long_name>
+			<units>1</units>
+		</variable>
+		<variable stash_item=147 stash_section=0>
+			<field_code>687</field_code>
+			<standard_name>sea_ice_thickness</standard_name>
+			<long_name>HICE: MEAN ICE DEPTH OVER GRIDBOX</long_name>
+			<units>M</units>
+		</variable>
+		<variable stash_item=148 stash_section=0>
+			<field_code>728</field_code>
+			<standard_name>eastward_sea_ice_velocity</standard_name>
+			<long_name>ICE U_VELOCITY                   M/S</long_name>
+			<units>m s-1</units>
+		</variable>
+		<variable stash_item=149 stash_section=0>
+			<field_code>729</field_code>
+			<standard_name>northward_sea_ice_velocity</standard_name>
+			<long_name>ICE V_VELOCITY                   M/S</long_name>
+			<units>m s-1</units>
+		</variable>
+		<variable stash_item=150 stash_section=0>
+			<field_code>42</field_code>
+			<standard_name>surface_downward_eastward_stress</standard_name>
+			<long_name>W COMP OF WIND C-P TH LEVS</long_name>
+			<units>Pa</units>
+		</variable>
+		<variable stash_item=151 stash_section=0>
+			<field_code>8</field_code>
+			<standard_name>surface_downward_northward_stress</standard_name>
+			<long_name>PRESSURE      C-P RHO LEVS</long_name>
+			<units>Pa</units>
+		</variable>
+		<variable stash_item=160 stash_section=0>
+			<field_code>1376</field_code>
+			<standard_name>atmosphere_so4_content</standard_name>
+			<long_name>HADCM2 SULPHATE LOADING PATTERNS</long_name>
+			<units>kg m-2</units>
+		</variable>
+		<variable stash_item=161 stash_section=0>
+			<field_code>625</field_code>
+			<standard_name>downwelling_shortwave_flux_in_sea_water</standard_name>
+			<long_name>SOL: PEN.SOLAR*LF INTO OCEAN W/M2  A</long_name>
+			<units>W m-2</units>
+		</variable>
+		<variable stash_item=162 stash_section=0>
+			<field_code>626</field_code>
+			<standard_name>none</standard_name>
+			<long_name>HTN:NONPEN.HT.FLX*LF INTO OCN</long_name>
+			<units>W/M2 A</units>
+		</variable>
+		<variable stash_item=165 stash_section=0>
+			<field_code>629</field_code>
+			<standard_name>water_flux_into_sea_water_without_flux_correction</standard_name>
+			<long_name>PLE:PRECIP-EVAP INTO OCEAN KG/M2/S A</long_name>
+			<units>kg m-2 s-1</units>
+		</variable>
+		<variable stash_item=166 stash_section=0>
+			<field_code>631</field_code>
+			<standard_name>water_flux_into_sea_water_from_rivers</standard_name>
+			<long_name>RIVER OUTFLOW INTO OCEAN  KG/M2/S  A</long_name>
+			<units>kg m-2 s-1</units>
+		</variable>
+		<variable stash_item=185 stash_section=0>
+			<field_code>671</field_code>
+			<standard_name>heat_flux_correction</standard_name>
+			<long_name>OCEAN HEAT FLUX CORRECTION   W/M2  A</long_name>
+			<units>W m-2</units>
+		</variable>
+		<variable stash_item=186 stash_section=0>
+			<field_code>672</field_code>
+			<standard_name>water_flux_correction</standard_name>
+			<long_name>P-E FLUX CORRECTION       KG/M2/S  A</long_name>
+			<units>kg m-2 s-1</units>
+		</variable>
+		<variable stash_item=194 stash_section=0>
+			<field_code>658</field_code>
+			<standard_name>ocean_isopycnal_layer_thickness_diffusivity</standard_name>
+			<long_name>THICKNESS DIFF COEFF (OCEAN) CM2/S</long_name>
+			<units>m2 s-1</units>
+		</variable>
+		<variable stash_item=2 stash_section=0>
+			<field_code>56</field_code>
+			<standard_name>eastward_wind</standard_name>
+			<long_name>U COMPNT OF WIND AFTER TIMESTEP</long_name>
+			<units>m s-1</units>
+		</variable>
+		<variable stash_item=20 stash_section=0>
+			<field_code>23</field_code>
+			<standard_name>soil_temperature</standard_name>
+			<long_name>DEEP SOIL TEMP AFTER TIMESTEP</long_name>
+			<units>K</units>
+		</variable>
+		<variable stash_item=205 stash_section=0>
+			<field_code>36</field_code>
+			<standard_name>land_area_fraction</standard_name>
+			<long_name>FRACTIONAL LAND COVER</long_name>
+			<units>1</units>
+		</variable>
+		<variable stash_item=214 stash_section=0>
+			<field_code>1385</field_code>
+			<standard_name>mass_fraction_of_unfrozen_water_in_soil_moisture</standard_name>
+			<long_name>UNFROZEN SOIL MOISTURE FRAC AFTER TS</long_name>
+			<units>1</units>
+		</variable>
+		<variable stash_item=215 stash_section=0>
+			<field_code>1386</field_code>
+			<standard_name>mass_fraction_of_frozen_water_in_soil_moisture</standard_name>
+			<long_name>FROZEN SOIL MOISTURE FRAC AFTER TS</long_name>
+			<units>1</units>
+		</variable>
+		<variable stash_item=22 stash_section=0>
+			<field_code>271</field_code>
+			<standard_name>canopy_water_amount</standard_name>
+			<long_name>CANOPY WATER AFTER TIMESTEP    KG/M2</long_name>
+			<units>kg m-2</units>
+		</variable>
+		<variable stash_item=220 stash_section=0>
+			<field_code>1395</field_code>
+			<standard_name>soil_albedo</standard_name>
+			<long_name>SNOW-FREE ALBEDO OF SOIL</long_name>
+			<units>1</units>
+		</variable>
+		<variable stash_item=221 stash_section=0>
+			<field_code>1396</field_code>
+			<standard_name>snow_soot_content</standard_name>
+			<long_name>SNOW SOOT CONTENT</long_name>
+			<units>kg m-2</units>
+		</variable>
+		<variable stash_item=223 stash_section=0>
+			<field_code>1397</field_code>
+			<standard_name>soil_carbon_content</standard_name>
+			<long_name>SOIL CARBON CONTENT       KG C / M2</long_name>
+			<units>kg m-2</units>
+		</variable>
+		<variable stash_item=23 stash_section=0>
+			<field_code>93</field_code>
+			<standard_name>surface_snow_amount</standard_name>
+			<long_name>SNOW AMOUNT AFTER TIMESTEP     KG/M2</long_name>
+			<units>kg m-2</units>
+		</variable>
+		<variable stash_item=231 stash_section=0>
+			<field_code>1507</field_code>
+			<standard_name>snow_grain_size</standard_name>
+			<long_name>SNOW GRAIN SIZE              MICRONS</long_name>
+			<units>m</units>
+		</variable>
+		<variable stash_item=233 stash_section=0>
+			<field_code>1510</field_code>
+			<standard_name>snow_temperature</standard_name>
+			<long_name>SURFACE TEMP ON SNOW-ADJSTD TILES  K</long_name>
+			<units>K</units>
+		</variable>
+		<variable stash_item=24 stash_section=0>
+			<field_code>16</field_code>
+			<standard_name>surface_temperature</standard_name>
+			<long_name>SURFACE TEMPERATURE AFTER TIMESTEP</long_name>
+			<units>K</units>
+		</variable>
+		<variable stash_item=25 stash_section=0>
+			<field_code>5</field_code>
+			<standard_name>atmosphere_boundary_layer_thickness</standard_name>
+			<long_name>BOUNDARY LAYER DEPTH AFTER TIMESTEP</long_name>
+			<units>m</units>
+		</variable>
+		<variable stash_item=26 stash_section=0>
+			<field_code>324</field_code>
+			<standard_name>surface_roughness_length</standard_name>
+			<long_name>ROUGHNESS LENGTH AFTER TIMESTEP</long_name>
+			<units>m</units>
+		</variable>
+		<variable stash_item=28 stash_section=0>
+			<field_code>701</field_code>
+			<standard_name>eastward_sea_water_velocity</standard_name>
+			<long_name>SURFACE ZONAL CURRENT AFTER TIMESTEP</long_name>
+			<units>m s-1</units>
+		</variable>
+		<variable stash_item=29 stash_section=0>
+			<field_code>702</field_code>
+			<standard_name>northward_sea_water_velocity</standard_name>
+			<long_name>SURFACE MERID CURRENT AFTER TIMESTEP</long_name>
+			<units>m s-1</units>
+		</variable>
+		<variable stash_item=3 stash_section=0>
+			<field_code>57</field_code>
+			<standard_name>northward_wind</standard_name>
+			<long_name>V COMPNT OF WIND AFTER TIMESTEP</long_name>
+			<units>m s-1</units>
+		</variable>
+		<variable stash_item=30 stash_section=0>
+			<field_code>395</field_code>
+			<standard_name>land_binary_mask</standard_name>
+			<long_name>LAND MASK (LOGICAL: LAND=TRUE)</long_name>
+			<units>1</units>
+		</variable>
+		<variable stash_item=31 stash_section=0>
+			<field_code>37</field_code>
+			<standard_name>sea_ice_area_fraction</standard_name>
+			<long_name>SEA ICE FRACTION AFTER TIMESTEP</long_name>
+			<units>1</units>
+		</variable>
+		<variable stash_item=32 stash_section=0>
+			<field_code>687</field_code>
+			<standard_name>sea_ice_thickness</standard_name>
+			<long_name>SEA ICE DEPTH (MEAN OVER ICE)      M</long_name>
+			<units>m</units>
+		</variable>
+		<variable stash_item=33 stash_section=0>
+			<field_code>1</field_code>
+			<standard_name>surface_altitude</standard_name>
+			<long_name>OROGRAPHY (/STRAT LOWER BC)</long_name>
+			<units>m</units>
+		</variable>
+		<variable stash_item=4 stash_section=0>
+			<field_code>19</field_code>
+			<standard_name>air_potential_temperature</standard_name>
+			<long_name>THETA AFTER TIMESTEP</long_name>
+			<units>K</units>
+		</variable>
+		<variable stash_item=50 stash_section=0>
+			<field_code>326</field_code>
+			<standard_name>vegetation_area_fraction</standard_name>
+			<long_name>VEGETATION FRACTION AFTER TIMESTEP</long_name>
+			<units>1</units>
+		</variable>
+		<variable stash_item=51 stash_section=0>
+			<field_code>321</field_code>
+			<standard_name>root_depth</standard_name>
+			<long_name>ROOT DEPTH AFTER TIMESTEP</long_name>
+			<units>m</units>
+		</variable>
+		<variable stash_item=60 stash_section=0>
+			<field_code>453</field_code>
+			<standard_name>mass_fraction_of_o3_in_air</standard_name>
+			<long_name>OZONE                             **</long_name>
+			<units>1</units>
+		</variable>
+		<variable stash_item=9 stash_section=0>
+			<field_code>122</field_code>
+			<standard_name>soil_moisture_content</standard_name>
+			<long_name>SOIL MOISTURE CONTENT IN A LAYER</long_name>
+			<units>kg m-2</units>
+		</variable>
+		<variable stash_item=201 stash_section=1>
+			<field_code>186</field_code>
+			<standard_name>surface_net_downward_shortwave_flux</standard_name>
+			<long_name>NET DOWN SURFACE SW FLUX: SW TS ONLY</long_name>
+			<units>W m-2</units>
+		</variable>
+		<variable stash_item=203 stash_section=1>
+			<field_code>186</field_code>
+			<standard_name>surface_net_downward_shortwave_flux_where_open_sea</standard_name>
+			<long_name>NET DOWN SW RAD FLUX: OPEN SEA</long_name>
+			<units>W/M2</units>
+		</variable>
+		<variable stash_item=204 stash_section=1>
+			<field_code>186</field_code>
+			<standard_name>surface_net_downward_shortwave_flux_where_below690nm</standard_name>
+			<long_name>NET DOWN SURFACE SW FLUX BELOW 690NM</long_name>
+			<units>1.0</units>
+		</variable>
+		<variable stash_item=207 stash_section=1>
+			<field_code>200</field_code>
+			<standard_name>toa_incoming_shortwave_flux</standard_name>
+			<long_name>INCOMING SW RAD FLUX (TOA): ALL TSS</long_name>
+			<units>W m-2</units>
+		</variable>
+		<variable stash_item=208 stash_section=1>
+			<field_code>201</field_code>
+			<standard_name>toa_outgoing_shortwave_flux</standard_name>
+			<long_name>OUTGOING SW RAD FLUX (TOA)</long_name>
+			<units>W m-2</units>
+		</variable>
+		<variable stash_item=209 stash_section=1>
+			<field_code>207</field_code>
+			<standard_name>toa_outgoing_shortwave_flux_assuming_clear_sky</standard_name>
+			<long_name>CLEAR-SKY (II) UPWARD SW FLUX (TOA)</long_name>
+			<units>W m-2</units>
+		</variable>
+		<variable stash_item=210 stash_section=1>
+			<field_code>208</field_code>
+			<standard_name>surface_downwelling_shortwave_flux_assuming_clear_sky</standard_name>
+			<long_name>CLEAR-SKY (II) DOWN SURFACE SW FLUX</long_name>
+			<units>W m-2</units>
+		</variable>
+		<variable stash_item=211 stash_section=1>
+			<field_code>207</field_code>
+			<standard_name>surface_upwelling_shortwave_flux_assuming_clear_sky</standard_name>
+			<long_name>CLEAR-SKY (II) UP SURFACE SW FLUX</long_name>
+			<units>W m-2</units>
+		</variable>
+		<variable stash_item=201 stash_section=12>
+			<field_code>40</field_code>
+			<standard_name>omega</standard_name>
+			<long_name>OMEGA ON MODEL LEVELS</long_name>
+			<units>Pa s-1</units>
+		</variable>
+		<variable stash_item=232 stash_section=1>
+			<field_code>251</field_code>
+			<standard_name>tendency_of_air_temperature_due_to_shortwave_heating</standard_name>
+			<long_name>SW HEATING RATES: ALL TIMESTEPS</long_name>
+			<units>K s-1</units>
+		</variable>
+		<variable stash_item=233 stash_section=1>
+			<field_code>252</field_code>
+			<standard_name>tendency_of_air_temperature_due_to_shortwave_heating_assuming_clear_sky</standard_name>
+			<long_name>CLEAR-SKY SW HEATING RATES</long_name>
+			<units>K s-1</units>
+		</variable>
+		<variable stash_item=235 stash_section=1>
+			<field_code>203</field_code>
+			<standard_name>surface_downwelling_shortwave_flux</standard_name>
+			<long_name>TOTAL DOWNWARD SURFACE SW FLUX</long_name>
+			<units>W m-2</units>
+		</variable>
+		<variable stash_item=237 stash_section=1>
+			<field_code>186</field_code>
+			<standard_name>tropopause_net_downward_shortwave_flux</standard_name>
+			<long_name>NET DOWNWARD SW FLUX AT THE TROP.</long_name>
+			<units>W m-2</units>
+		</variable>
+		<variable stash_item=238 stash_section=1>
+			<field_code>201</field_code>
+			<standard_name>tropopause_upwelling_shortwave_flux</standard_name>
+			<long_name>UPWARD SW FLUX AT THE TROP.</long_name>
+			<units>W m-2</units>
+		</variable>
+		<variable stash_item=201 stash_section=13>
+			<field_code>184</field_code>
+			<standard_name>none</standard_name>
+			<long_name>QT SOURCE/SINK IN QT_POS</long_name>
+			<units>KG/M2/S</units>
+		</variable>
+		<variable stash_item=201 stash_section=14>
+			<field_code>259</field_code>
+			<standard_name>none</standard_name>
+			<long_name>ATMOS ENERGY CORR'N IN COLUMN</long_name>
+			<units>W/M</units>
+		</variable>
+		<variable stash_item=201 stash_section=15>
+			<field_code>56</field_code>
+			<standard_name>eastward_wind</standard_name>
+			<long_name>U COMPNT OF WIND ON PRESSURE LEVELS</long_name>
+			<units>m s-1</units>
+		</variable>
+		<variable stash_item=202 stash_section=15>
+			<field_code>57</field_code>
+			<standard_name>northward_wind</standard_name>
+			<long_name>V COMPNT OF WIND ON PRESSURE LEVELS</long_name>
+			<units>m s-1</units>
+		</variable>
+		<variable stash_item=214 stash_section=15>
+			<field_code>82</field_code>
+			<standard_name>ertel_potential_vorticity</standard_name>
+			<long_name>ERTEL POTENTIAL VORTICITY(THETA LEV)</long_name>
+			<units>K m2 kg-1 s-1</units>
+		</variable>
+		<variable stash_item=215 stash_section=15>
+			<field_code>60</field_code>
+			<standard_name>product_of_eastward_wind_and_northward_wind</standard_name>
+			<long_name>UV ON PRESSURE LEVS.       USE MACRO</long_name>
+			<units>m2 s-2</units>
+		</variable>
+		<variable stash_item=217 stash_section=15>
+			<field_code>11</field_code>
+			<standard_name>product_of_eastward_wind_and_air_temperature</standard_name>
+			<long_name>UT ON PRESS LEVS U GRID.   USE MACRO</long_name>
+			<units>K m s-1</units>
+		</variable>
+		<variable stash_item=218 stash_section=15>
+			<field_code>12</field_code>
+			<standard_name>product_of_northward_wind_and_air_temperature</standard_name>
+			<long_name>VT ON PRESS LEVS U GRID.   USE MACRO</long_name>
+			<units>K m s-1</units>
+		</variable>
+		<variable stash_item=219 stash_section=15>
+			<field_code>13</field_code>
+			<standard_name>square_of_air_temperature</standard_name>
+			<long_name>T**2 ON PRESS LEVS U GRID. USE MACRO</long_name>
+			<units>K2</units>
+		</variable>
+		<variable stash_item=220 stash_section=15>
+			<field_code>58</field_code>
+			<standard_name>square_of_eastward_wind</standard_name>
+			<long_name>U**2 ON PRESS LEVS U GRID. USE MACRO</long_name>
+			<units>m2 s-2</units>
+		</variable>
+		<variable stash_item=221 stash_section=15>
+			<field_code>59</field_code>
+			<standard_name>square_of_northward_wind</standard_name>
+			<long_name>V**2 ON PRESS LEVS U GRID. USE MACRO</long_name>
+			<units>m2 s-2</units>
+		</variable>
+		<variable stash_item=224 stash_section=15>
+			<field_code>53</field_code>
+			<standard_name>product_of_eastward_wind_and_omega</standard_name>
+			<long_name>OMEGA*U ON P LEVS U GRID.  USE MACRO</long_name>
+			<units>Pa m s-2</units>
+		</variable>
+		<variable stash_item=225 stash_section=15>
+			<field_code>54</field_code>
+			<standard_name>product_of_northward_wind_and_omega</standard_name>
+			<long_name>OMEGA*V ON P LEVS U GRID.  USE MACRO</long_name>
+			<units>Pa m s-2</units>
+		</variable>
+		<variable stash_item=227 stash_section=15>
+			<field_code>46</field_code>
+			<standard_name>product_of_eastward_wind_and_specific_humidity</standard_name>
+			<long_name>Q*U ON PRESS LEVS U GRID.  USE MACRO</long_name>
+			<units>m s-1</units>
+		</variable>
+		<variable stash_item=228 stash_section=15>
+			<field_code>47</field_code>
+			<standard_name>product_of_northward_wind_and_specific_humidity</standard_name>
+			<long_name>Q*V ON PRESS LEVS U GRID.  USE MACRO</long_name>
+			<units>m s-1</units>
+		</variable>
+		<variable stash_item=235 stash_section=15>
+			<field_code>1334</field_code>
+			<standard_name>product_of_omega_and_air_temperature</standard_name>
+			<long_name>q*w on press levs, u grid</long_name>
+			<units>K Pa s-1</units>
+		</variable>
+		<variable stash_item=237 stash_section=15>
+			<field_code>63</field_code>
+			<standard_name>atmosphere_kinetic_energy_content</standard_name>
+			<long_name>Total KE per unit area  x10e-6 J/m2</long_name>
+			<units>J m-2</units>
+		</variable>
+		<variable stash_item=238 stash_section=15>
+			<field_code>1</field_code>
+			<standard_name>geopotential_height</standard_name>
+			<long_name>Geopotential height, u grid</long_name>
+			<units>m</units>
+		</variable>
+		<variable stash_item=239 stash_section=15>
+			<field_code>1334</field_code>
+			<standard_name>product_of_eastward_wind_and_geopotential_height</standard_name>
+			<long_name>U*Geopotential height, u grid x1.e6</long_name>
+			<units>m2 s-1</units>
+		</variable>
+		<variable stash_item=240 stash_section=15>
+			<field_code>1334</field_code>
+			<standard_name>product_of_northward_wind_and_geopotential_height</standard_name>
+			<long_name>V*Geopotential height, u grid x1.e6</long_name>
+			<units>m2 s-1</units>
+		</variable>
+		<variable stash_item=202 stash_section=16>
+			<field_code>1</field_code>
+			<standard_name>geopotential_height</standard_name>
+			<long_name>GEOPOTENTIAL HEIGHT: PRESSURE LEVELS</long_name>
+			<units>m</units>
+		</variable>
+		<variable stash_item=203 stash_section=16>
+			<field_code>16</field_code>
+			<standard_name>air_temperature_at_pressure_level</standard_name>
+			<long_name>TEMPERATURE ON PRESSURE LEVELS</long_name>
+			<units>K</units>
+		</variable>
+		<variable stash_item=204 stash_section=16>
+			<field_code>88</field_code>
+			<standard_name>relative_humidity_at_pressure_level</standard_name>
+			<long_name>RELATIVE HUMIDITY ON PRESSURE LEVELS</long_name>
+			<units>1</units>
+		</variable>
+		<variable stash_item=210 stash_section=16>
+			<field_code>1</field_code>
+			<standard_name>freezing_level_altitude</standard_name>
+			<long_name>HEIGHT OF FREEZING LEV- NEED PRESS</long_name>
+			<units>m</units>
+		</variable>
+		<variable stash_item=211 stash_section=16>
+			<field_code>8</field_code>
+			<standard_name>air_pressure_at_freezing_level</standard_name>
+			<long_name>PRESSURE OF FREEZING LEV- NEED HT</long_name>
+			<units>Pa</units>
+		</variable>
+		<variable stash_item=214 stash_section=16>
+			<field_code>8</field_code>
+			<standard_name>tropopause_air_pressure</standard_name>
+			<long_name>PRESSURE AT TROP LEV- NEED HT,TEMP</long_name>
+			<units>Pa</units>
+		</variable>
+		<variable stash_item=215 stash_section=16>
+			<field_code>16</field_code>
+			<standard_name>tropopause_air_temperature</standard_name>
+			<long_name>TEMP AT TROP LEVEL- NEED HT,PRESS</long_name>
+			<units>K</units>
+		</variable>
+		<variable stash_item=216 stash_section=16>
+			<field_code>1</field_code>
+			<standard_name>tropopause_altitude</standard_name>
+			<long_name>HEIGHT OF TROP- NEED TEMP, PRESS</long_name>
+			<units>m</units>
+		</variable>
+		<variable stash_item=222 stash_section=16>
+			<field_code>8</field_code>
+			<standard_name>air_pressure_at_sea_level</standard_name>
+			<long_name>PRESSURE AT MEAN SEA LEVEL</long_name>
+			<units>Pa</units>
+		</variable>
+		<variable stash_item=2 stash_section=19>
+			<field_code>1513</field_code>
+			<standard_name>vegetation_carbon_content</standard_name>
+			<long_name>GRIDBOX MEAN VEG CARBON      KG C/M2</long_name>
+			<units>kg m-2</units>
+		</variable>
+		<variable stash_item=5 stash_section=19>
+			<field_code>1516</field_code>
+			<standard_name>litter_carbon_flux</standard_name>
+			<long_name>GRIDBOX MEAN LITTER CARBN KGC/M2/YR</long_name>
+			<units>kg m-2 s-1</units>
+		</variable>
+		<variable stash_item=201 stash_section=2>
+			<field_code>187</field_code>
+			<standard_name>surface_net_downward_longwave_flux</standard_name>
+			<long_name>NET DOWN SURFACE LW RAD FLUX</long_name>
+			<units>W m-2</units>
+		</variable>
+		<variable stash_item=203 stash_section=2>
+			<field_code>187</field_code>
+			<standard_name>surface_net_downward_longwave_flux_where_open_sea</standard_name>
+			<long_name>NET DOWN LW RAD FLUX: OPEN SEA</long_name>
+			<units>W/M2</units>
+		</variable>
+		<variable stash_item=204 stash_section=2>
+			<field_code>30</field_code>
+			<standard_name>cloud_area_fraction</standard_name>
+			<long_name>TOTAL CLOUD AMOUNT IN LW RADIATION</long_name>
+			<units>1.0</units>
+		</variable>
+		<variable stash_item=205 stash_section=2>
+			<field_code>206</field_code>
+			<standard_name>toa_net_upward_longwave_flux</standard_name>
+			<long_name>OUTGOING LW RAD FLUX (TOA)</long_name>
+			<units>W m-2</units>
+		</variable>
+		<variable stash_item=206 stash_section=2>
+			<field_code>210</field_code>
+			<standard_name>toa_net_upward_longwave_flux_assuming_clear_sky</standard_name>
+			<long_name>CLEAR-SKY (II) UPWARD LW FLUX (TOA)</long_name>
+			<units>W m-2</units>
+		</variable>
+		<variable stash_item=207 stash_section=2>
+			<field_code>205</field_code>
+			<standard_name>surface_downwelling_longwave_flux</standard_name>
+			<long_name>DOWNWARD LW RAD FLUX: SURFACE</long_name>
+			<units>W m-2</units>
+		</variable>
+		<variable stash_item=208 stash_section=2>
+			<field_code>211</field_code>
+			<standard_name>surface_downwelling_longwave_flux_assuming_clear_sky</standard_name>
+			<long_name>CLEAR-SKY (II) DOWN SURFACE LW FLUX</long_name>
+			<units>W m-2</units>
+		</variable>
+		<variable stash_item=232 stash_section=2>
+			<field_code>253</field_code>
+			<standard_name>tendency_of_air_temperature_due_to_longwave_heating</standard_name>
+			<long_name>LW HEATING RATES</long_name>
+			<units>K s-1</units>
+		</variable>
+		<variable stash_item=233 stash_section=2>
+			<field_code>254</field_code>
+			<standard_name>tendency_of_air_temperature_due_to_longwave_heating_assuming_clear_sky</standard_name>
+			<long_name>CLEAR-SKY LW HEATING RATES</long_name>
+			<units>K s-1</units>
+		</variable>
+		<variable stash_item=237 stash_section=2>
+			<field_code>187</field_code>
+			<standard_name>tropopause_net_downward_longwave_flux</standard_name>
+			<long_name>NET DOWNWARD LW FLUX AT THE TROP.</long_name>
+			<units>W m-2</units>
+		</variable>
+		<variable stash_item=238 stash_section=2>
+			<field_code>205</field_code>
+			<standard_name>tropopause_downwelling_longwave_flux</standard_name>
+			<long_name>TOTAL DOWNWARD LW FLUX AT THE TROP.</long_name>
+			<units>W m-2</units>
+		</variable>
+		<variable stash_item=201 stash_section=30>
+			<field_code>680</field_code>
+			<standard_name>upward_sea_water_velocity</standard_name>
+			<long_name>VERT.VEL. ON OCEAN HALF LEVELS  CM/S</long_name>
+			<units>m s-1</units>
+		</variable>
+		<variable stash_item=211 stash_section=30>
+			<field_code>740</field_code>
+			<standard_name>northward_ocean_heat_transport</standard_name>
+			<long_name>MEAD DIAGNOSTICS: TEMPERATURE    W</long_name>
+			<units>W</units>
+		</variable>
+		<variable stash_item=212 stash_section=30>
+			<field_code>740</field_code>
+			<standard_name>northward_ocean_salt_transport</standard_name>
+			<long_name>MEAD DIAGNOSTICS: SALINITY     KG/S</long_name>
+			<units>kg s-1</units>
+		</variable>
+		<variable stash_item=321 stash_section=30>
+			<field_code>704</field_code>
+			<standard_name>northward_sea_water_velocity</standard_name>
+			<long_name>TOTAL OCEAN V-VELOCITY      CM S**-1</long_name>
+			<units>m s-1</units>
+		</variable>
+		<variable stash_item=201 stash_section=3>
+			<field_code>261</field_code>
+			<standard_name>downward_heat_flux_in_sea_ice</standard_name>
+			<long_name>HEAT FLUX THROUGH SEA ICE (GBM) W/M2</long_name>
+			<units>W m-2</units>
+		</variable>
+		<variable stash_item=202 stash_section=3>
+			<field_code>179</field_code>
+			<standard_name>downward_heat_flux_in_soil</standard_name>
+			<long_name>HT FLUX FROM SURF TO DEEP SOIL LEV 1</long_name>
+			<units>W m-2</units>
+		</variable>
+		<variable stash_item=203 stash_section=3>
+			<field_code>160</field_code>
+			<standard_name>drag_coefficient</standard_name>
+			<long_name>CD</long_name>
+			<units>1</units>
+		</variable>
+		<variable stash_item=205 stash_section=3>
+			<field_code>52</field_code>
+			<standard_name>derivative_of_wind_speed_wrt_altitude_in_constant_flux_layer</standard_name>
+			<long_name>SURFACE LAYER WIND SHEAR</long_name>
+			<units>s-1</units>
+		</variable>
+		<variable stash_item=206 stash_section=3>
+			<field_code>172</field_code>
+			<standard_name>downward_stress_in_constant_flux_layer</standard_name>
+			<long_name>RHOSTAR * CD * SURF_LAYER_WIND_SHEAR</long_name>
+			<units>Pa</units>
+		</variable>
+		<variable stash_item=208 stash_section=3>
+			<field_code>181</field_code>
+			<standard_name>bulk_Richardson_number</standard_name>
+			<long_name>LOWEST LAYER BULK RICHARDSON NO. RIB</long_name>
+			<units>1</units>
+		</variable>
+		<variable stash_item=217 stash_section=3>
+			<field_code>178</field_code>
+			<standard_name>surface_upward_sensible_heat_flux</standard_name>
+			<long_name>SURFACE & B.LAYER HEAT FLUXES   W/M2</long_name>
+			<units>W m-2</units>
+		</variable>
+		<variable stash_item=219 stash_section=3>
+			<field_code>61</field_code>
+			<standard_name>downward_eastward_momentum_flux_in_air</standard_name>
+			<long_name>X-COMP OF SURF & BL WIND STRESS N/M2</long_name>
+			<units>Pa</units>
+		</variable>
+		<variable stash_item=220 stash_section=3>
+			<field_code>62</field_code>
+			<standard_name>downward_northward_momentum_flux_in_air</standard_name>
+			<long_name>Y-COMP OF SURF & BL WIND STRESS N/M2</long_name>
+			<units>Pa</units>
+		</variable>
+		<variable stash_item=223 stash_section=3>
+			<field_code>184</field_code>
+			<standard_name>upward_water_vapor_flux_in_air</standard_name>
+			<long_name>SURF & BL TOTL MOISTURE FLUX KG/M2/S</long_name>
+			<units>kg m-2 s-1</units>
+		</variable>
+		<variable stash_item=224 stash_section=3>
+			<field_code>182</field_code>
+			<standard_name>wind_mixing_energy_flux_into_ocean</standard_name>
+			<long_name>WIND MIXING EN'GY FLUX INTO SEA W/M2</long_name>
+			<units>W m-2</units>
+		</variable>
+		<variable stash_item=225 stash_section=3>
+			<field_code>56</field_code>
+			<standard_name>eastward_wind</standard_name>
+			<long_name>10 METRE WIND U-COMP</long_name>
+			<units>m s-1</units>
+		</variable>
+		<variable stash_item=226 stash_section=3>
+			<field_code>57</field_code>
+			<standard_name>northward_wind</standard_name>
+			<long_name>10 METRE WIND V-COMP</long_name>
+			<units>m s-1</units>
+		</variable>
+		<variable stash_item=228 stash_section=3>
+			<field_code>178</field_code>
+			<standard_name>surface_upward_sensible_heat_flux_density_from_sea</standard_name>
+			<long_name>SURFACE SH FLUX FROM SEA (GBM)  W/M2</long_name>
+			<units>W m-2</units>
+		</variable>
+		<variable stash_item=231 stash_section=3>
+			<field_code>107</field_code>
+			<standard_name>none</standard_name>
+			<long_name>SUBLIM. FROM SURFACE (GBM)</long_name>
+			<units>KG/M2/TS</units>
+		</variable>
+		<variable stash_item=232 stash_section=3>
+			<field_code>285</field_code>
+			<standard_name>water_flux_out_of_sea_water</standard_name>
+			<long_name>EVAPORATION FROM SEA (GBM)</long_name>
+			<units>kg m-2 s-1</units>
+		</variable>
+		<variable stash_item=234 stash_section=3>
+			<field_code>180</field_code>
+			<standard_name>surface_upward_latent_heat_flux</standard_name>
+			<long_name>SURFACE LATENT HEAT FLUX        W/M2</long_name>
+			<units>W m-2</units>
+		</variable>
+		<variable stash_item=235 stash_section=3>
+			<field_code>260</field_code>
+			<standard_name>none</standard_name>
+			<long_name>SEAICE TOP MELTING LH FLUX(GBM)</long_name>
+			<units>W/M</units>
+		</variable>
+		<variable stash_item=236 stash_section=3>
+			<field_code>16</field_code>
+			<standard_name>air_temperature</standard_name>
+			<long_name>TEMPERATURE AT 1.5M</long_name>
+			<units>K</units>
+		</variable>
+		<variable stash_item=237 stash_section=3>
+			<field_code>95</field_code>
+			<standard_name>specific_humidity</standard_name>
+			<long_name>SPECIFIC HUMIDITY AT 1.5M</long_name>
+			<units>1.0</units>
+		</variable>
+		<variable stash_item=245 stash_section=3>
+			<field_code>88</field_code>
+			<standard_name>relative_humidity</standard_name>
+			<long_name>RELATIVE HUMIDITY AT 1.5M</long_name>
+			<units>1</units>
+		</variable>
+		<variable stash_item=249 stash_section=3>
+			<field_code>50</field_code>
+			<standard_name>wind_speed</standard_name>
+			<long_name>10 METRE WIND SPEED              M/S</long_name>
+			<units>m s-1</units>
+		</variable>
+		<variable stash_item=250 stash_section=3>
+			<field_code>17</field_code>
+			<standard_name>dew_point_temperature</standard_name>
+			<long_name>DEWPOINT AT 1.5M</long_name>
+			<units>K</units>
+		</variable>
+		<variable stash_item=258 stash_section=3>
+			<field_code>141</field_code>
+			<standard_name>surface_snow_melt_heat_flux</standard_name>
+			<long_name>SURFACE SNOWMELT HEAT FLUX      W/M2</long_name>
+			<units>W m-2</units>
+		</variable>
+		<variable stash_item=260 stash_section=3>
+			<field_code>1387</field_code>
+			<standard_name>transpiration_amount</standard_name>
+			<long_name>TRANSPIRATION   KG/M2/TS</long_name>
+			<units>kg m-2</units>
+		</variable>
+		<variable stash_item=261 stash_section=3>
+			<field_code>1388</field_code>
+			<standard_name>gross_primary_productivity_of_carbon</standard_name>
+			<long_name>GROSS PRIMARY PRODUCTIVITY KG C/M2/S</long_name>
+			<units>kg m-2 s-1</units>
+		</variable>
+		<variable stash_item=262 stash_section=3>
+			<field_code>1389</field_code>
+			<standard_name>net_primary_productivity_of_carbon</standard_name>
+			<long_name>NET PRIMARY PRODUCTIVITY KG C/M2/S</long_name>
+			<units>kg m-2 s-1</units>
+		</variable>
+		<variable stash_item=263 stash_section=3>
+			<field_code>1390</field_code>
+			<standard_name>plant_respiration_carbon_flux</standard_name>
+			<long_name>PLANT RESPIRATION KG/M2/S</long_name>
+			<units>kg m-2 s-1</units>
+		</variable>
+		<variable stash_item=296 stash_section=3>
+			<field_code>1526</field_code>
+			<standard_name>water_evaporation_flux_from_soil</standard_name>
+			<long_name>EVAP FROM SOIL SURF : RATE</long_name>
+			<units>kg m-2 s-1</units>
+		</variable>
+		<variable stash_item=297 stash_section=3>
+			<field_code>1527</field_code>
+			<standard_name>water_evaporation_flux_from_canopy</standard_name>
+			<long_name>EVAP FROM CANOPY : RATE</long_name>
+			<units>kg m-2 s-1</units>
+		</variable>
+		<variable stash_item=314 stash_section=3>
+			<field_code>202</field_code>
+			<standard_name>surface_net_downward_radiation</standard_name>
+			<long_name>SURFACE NET RADIATION</long_name>
+			<units>1.0</units>
+		</variable>
+		<variable stash_item=201 stash_section=4>
+			<field_code>102</field_code>
+			<standard_name>large_scale_rainfall_amount</standard_name>
+			<long_name>LARGE SCALE RAIN AMOUNT     KG/M2/TS</long_name>
+			<units>kg m-2</units>
+		</variable>
+		<variable stash_item=202 stash_section=4>
+			<field_code>116</field_code>
+			<standard_name>large_scale_snowfall_amount</standard_name>
+			<long_name>LARGE SCALE SNOW AMOUNT     KG/M2/TS</long_name>
+			<units>kg m-2</units>
+		</variable>
+		<variable stash_item=203 stash_section=4>
+			<field_code>99</field_code>
+			<standard_name>large_scale_rainfall_rate</standard_name>
+			<long_name>LARGE SCALE RAINFALL RATE</long_name>
+			<units>KG/M2/S</units>
+		</variable>
+		<variable stash_item=204 stash_section=4>
+			<field_code>118</field_code>
+			<standard_name>large_scale_snowfall_flux</standard_name>
+			<long_name>LARGE SCALE SNOWFALL RATE</long_name>
+			<units>KG/M2/S</units>
+		</variable>
+		<variable stash_item=303 stash_section=4>
+			<field_code>116</field_code>
+			<standard_name>large_scale_rainfall_flux</standard_name>
+			<long_name>LARGE SCALE SNOW AMOUNT     KG/M2/</long_name>
+			<units>kg m-2 s-1</units>
+		</variable>
+		<variable stash_item=304 stash_section=4>
+			<field_code>116</field_code>
+			<standard_name>large_scale_snowfall_flux</standard_name>
+			<long_name>LARGE SCALE SNOW AMOUNT     KG/M</long_name>
+			<units>kg m-2 s-1</units>
+		</variable>
+		<variable stash_item=201 stash_section=5>
+			<field_code>94</field_code>
+			<standard_name>convective_rainfall_amount</standard_name>
+			<long_name>CONVECTIVE RAIN AMOUNT      KG/M2/TS</long_name>
+			<units>kg m-2</units>
+		</variable>
+		<variable stash_item=202 stash_section=5>
+			<field_code>117</field_code>
+			<standard_name>convective_snowfall_amount</standard_name>
+			<long_name>CONVECTIVE SNOW AMOUNT      KG/M2/TS</long_name>
+			<units>kg m-2</units>
+		</variable>
+		<variable stash_item=205 stash_section=5>
+			<field_code>98</field_code>
+			<standard_name>convective_rainfall_flux</standard_name>
+			<long_name>CONVECTIVE RAINFALL RATE     KG/M2/S</long_name>
+			<units>kg m-2 s-1</units>
+		</variable>
+		<variable stash_item=206 stash_section=5>
+			<field_code>119</field_code>
+			<standard_name>convective_snowfall_flux</standard_name>
+			<long_name>CONVECTIVE SNOWFALL RATE     KG/M2/S</long_name>
+			<units>kg m-2 s-1</units>
+		</variable>
+		<variable stash_item=207 stash_section=5>
+			<field_code>34</field_code>
+			<standard_name>air_pressure_at_convective_cloud_base</standard_name>
+			<long_name>PRESSURE AT CONVECTIVE CLOUD BASE</long_name>
+			<units>Pa</units>
+		</variable>
+		<variable stash_item=208 stash_section=5>
+			<field_code>34</field_code>
+			<standard_name>air_pressure_at_convective_cloud_top</standard_name>
+			<long_name>PRESSURE AT CONVECTIVE CLOUD TOP</long_name>
+			<units>Pa</units>
+		</variable>
+		<variable stash_item=213 stash_section=5>
+			<field_code>218</field_code>
+			<standard_name>mass_fraction_of_convective_condensed_water_in_air</standard_name>
+			<long_name>CONV CLOUD CONDENSED WATER     KG/KG</long_name>
+			<units>1</units>
+		</variable>
+		<variable stash_item=214 stash_section=5>
+			<field_code>97</field_code>
+			<standard_name>rainfall_flux</standard_name>
+			<long_name>TOTAL RAINFALL RATE: LS+CONV KG/M2/S</long_name>
+			<units>kg m-2 s-1</units>
+		</variable>
+		<variable stash_item=215 stash_section=5>
+			<field_code>108</field_code>
+			<standard_name>snowfall_flux</standard_name>
+			<long_name>TOTAL SNOWFALL RATE: LS+CONV KG/M2/S</long_name>
+			<units>kg m-2 s-1</units>
+		</variable>
+		<variable stash_item=216 stash_section=5>
+			<field_code>90</field_code>
+			<standard_name>precipitation_flux</standard_name>
+			<long_name>TOTAL PRECIPITATION RATE     KG/M2/S</long_name>
+			<units>kg m-2 s-1</units>
+		</variable>
+		<variable stash_item=226 stash_section=5>
+			<field_code>77</field_code>
+			<standard_name>precipitation_amount</standard_name>
+			<long_name>TOTAL PRECIPITATION AMOUNT  KG/M2/TS</long_name>
+			<units>kg m-2</units>
+		</variable>
+		<variable stash_item=201 stash_section=6>
+			<field_code>61</field_code>
+			<standard_name>surface_eastward_gravity_wave_stress</standard_name>
+			<long_name>U COMPONENT OF GRAVITY WAVE STRESS</long_name>
+			<units>Pa</units>
+		</variable>
+		<variable stash_item=202 stash_section=6>
+			<field_code>62</field_code>
+			<standard_name>surface_northward_gravity_wave_stress</standard_name>
+			<long_name>V COMPONENT OF GRAVITY WAVE STRESS</long_name>
+			<units>Pa</units>
+		</variable>
+		<variable stash_item=204 stash_section=8>
+			<field_code>111</field_code>
+			<standard_name>subsurface_runoff_amount</standard_name>
+			<long_name>SURFACE RUNOFF AMOUNT       KG/M2/TS</long_name>
+			<units>kg m-2</units>
+		</variable>
+		<variable stash_item=205 stash_section=8>
+			<field_code>112</field_code>
+			<standard_name>none</standard_name>
+			<long_name>SUB-SURFACE RUNOFF AMOUNT</long_name>
+			<units>KG/M2/TS</units>
+		</variable>
+		<variable stash_item=208 stash_section=8>
+			<field_code>106</field_code>
+			<standard_name>liquid_water_content_of_soil_layer</standard_name>
+			<long_name>SOIL MOISTURE CONTENT</long_name>
+			<units>kg m-2</units>
+		</variable>
+		<variable stash_item=23 stash_section=8>
+			<field_code>93</field_code>
+			<standard_name>snowfall_amount</standard_name>
+			<long_name>SNOW MASS AFTER HYDROLOGY      KG/M2</long_name>
+			<units>kg m-2</units>
+		</variable>
+		<variable stash_item=234 stash_section=8>
+			<field_code>1532</field_code>
+			<standard_name>surface_runoff_flux</standard_name>
+			<long_name>SURFACE RUNOFF RATE          KG/M2/S</long_name>
+			<units>kg m-2 s-1</units>
+		</variable>
+		<variable stash_item=235 stash_section=8>
+			<field_code>1533</field_code>
+			<standard_name>none</standard_name>
+			<long_name>SUB-SURFACE RUNOFF RATE</long_name>
+			<units>KG/M2/S</units>
+		</variable>
+		<variable stash_item=218 stash_section=9>
+			<field_code>29</field_code>
+			<standard_name>cloud_fraction_below_ft_asl</standard_name>
+			<long_name>CLOUD FRACTION BELOW 1000 FT ASL</long_name>
+			<units>1</units>
+		</variable>
+		<variable stash_item=222 stash_section=9>
+			<field_code>41</field_code>
+			<standard_name>wet_bulb_temperature</standard_name>
+			<long_name>WET BULB TEMPERATURE (K)</long_name>
+			<units>K</units>
+		</variable>
+	</variables>
+</attributes>
