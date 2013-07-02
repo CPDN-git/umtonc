@@ -85,7 +85,7 @@ void VarLevTrans::ProcessVariableAttributes(TiXmlElement* px_root_ele, int i_mod
         	    	TiXmlAttribute* px_cur_attr = px_cur_item->FirstAttribute();
         	    	while (px_cur_attr)
         	    	{
-        	    	    std::string s_attr_name = px_cur_attr->Name();
+        	    	    std::string s_attr_name = px_cur_attr->Name();        	    	    
         	    	    std::string s_attr_value = px_cur_attr->Value();
         	    	    // add if not "id"
         	    	    if (s_attr_name != s_id_name)

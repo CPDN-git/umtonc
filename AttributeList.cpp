@@ -41,3 +41,29 @@ bool AttributeList::operator == (const AttributeList& rhs) const
 	// just compare the names
 	return s_name == rhs.s_name;
 }
+
+//*****************************************************************************
+
+bool AttributeList::HasAttribute(std::string name) const
+{
+	// return whether the attribute with name <name> exists in the attribute
+	// list for the variable
+	std::list<Attribute>::const_iterator it;
+	for (it = x_atts.begin(); it != x_atts.end(); it++)
+		if (it->GetName() == name)
+			return true;
+	return false;
+}
+
+//*****************************************************************************
+
+const Attribute& AttributeList::GetAttribute(std::string name) const
+{
+	// return a reference to the attribute with the name name
+	std::list<Attribute>::const_iterator it;
+	for (it = x_atts.begin(); it != x_atts.end(); it++)
+		if (it->GetName() == name)
+			return *it;
+	// not found - should use HasAttribute first to check
+	throw ("Attribute with name: " + name + " not found.  Use HasAttribute to check presence before calling GetAttribute");
+}

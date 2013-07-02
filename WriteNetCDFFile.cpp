@@ -341,15 +341,27 @@ NcType UMtoNCtype(int i_um_type)
 
 //*****************************************************************************
 
-std::string GetVarName(NcFile& x_nc_file, const Variable& x_var)
+std::string GetVarName(NcFile& x_nc_file, const Variable& x_var, const VarLevTrans& x_var_lev_trans)
 {
 	// fail silently as we're searching for names
 	NcError x_err(NcError::silent_nonfatal);
-	// create the var name
-	std::string s_base_name = "field" + ToString(x_var.GetFieldCode());
+	std::string s_base_name;
+	const AttributeList& x_att_list =  x_var_lev_trans.GetVariableAttributes(x_var.GetStashCode());
+	// create the var name - this is a CMOR name if the attribute "out_name" exists
+	if (x_att_list.HasAttribute("out_name"))
+		s_base_name = x_att_list.GetAttribute("out_name").GetValue();
+	else
+		s_base_name = "field" + ToString(x_var.GetFieldCode());
+	// check on cell method whether to add min or max - see GetCellMethod function
+	int i_pcode = x_var.GetProcCode();
+	if ((i_pcode & 4096) != 0)
+		s_base_name += "min";
+	if ((i_pcode & 8192) != 0)
+		s_base_name += "max";
+	
 	// check whether it exists in the file already
 	int i_c = 1;
-	std::string s_var_name = s_base_name;
+	std::string s_var_name = s_base_name + "_0";
 	while (x_nc_file.get_var(s_var_name.c_str()) != NULL)
 	{
 		s_var_name = s_base_name + "_" + ToString(i_c);
@@ -441,8 +453,7 @@ void CreateVariables(NcFile& x_nc_file, std::list<Variable>& x_var_list,
 				break;
 		}
 		// create the variable name
-		std::string s_var_name = GetVarName(x_nc_file, *it_var_list);
-		// check whether the var name exists append 1 if it does
+		std::string s_var_name = GetVarName(x_nc_file, *it_var_list, x_var_lev_trans);
 		// create the actual variable
 		NcVar* px_var = x_nc_file.add_var(s_var_name.c_str(), i_type,
 										  px_td, px_zd, px_latd, px_lond);

@@ -6,6 +6,8 @@
 //*           and recover their attributes
 //* Modified: 13/05/13 - Neil Massey - changed to use XML UM variables to
 //*           CF-compliant variables translation file from PRECIS
+//*           02/07/13 - NRM - Allow for CMOR compatible names with the
+//*           <out_name> tag
 //*****************************************************************************
 
 #ifndef VARLEV_TRANS_H
