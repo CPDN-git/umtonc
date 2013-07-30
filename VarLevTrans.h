@@ -23,7 +23,7 @@ class VarLevTrans
 		VarLevTrans(std::string s_xml_file_name);
 		bool LoadAttributes(void);
 		const AttributeList& GetVariableAttributes(int i_stash_code) const;
-		AttributeList GetLevelAttributes(int i_level_type) const;
+		AttributeList GetLevelAttributes(int i_level_type, int i_size) const;
 
 	private:
 		void ProcessVariableAttributes(TiXmlElement* px_root_ele, int i_model_id);

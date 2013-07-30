@@ -21,6 +21,8 @@ class Level
 		void Print(void) const;
 		int GetType(void) const;
 		float GetValue(void) const;
+		void SetName(std::string name);
+		std::string GetName(void);
 	
 	private:
 		int i_levtype;
@@ -28,6 +30,7 @@ class Level
 		float f_acoeff;
 		float f_bcoeff;
 		float f_p0;
+		std::string s_lev_name;
 };
 
 #endif

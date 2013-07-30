@@ -71,6 +71,7 @@ class Variable
 		float f_sf;
 		float f_off;
 		int   i_npack_bytes;
+		std::string s_level_name;
 };
 
 #endif

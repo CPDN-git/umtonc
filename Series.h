@@ -72,6 +72,13 @@ template <typename T> class Series
 		{
 			return x_series;
 		}
+
+		//*********************************************************************
+
+		std::list<T>& Get(void)
+		{
+			return x_series;
+		}
 		
 		//*********************************************************************
 
@@ -106,6 +113,13 @@ template <typename T> class Series
 		void SetBaseValue(float base_value)
 		{
 			f_base_value = base_value;
+		}
+
+		//*********************************************************************
+
+		int Size(void)
+		{
+			return x_series.size();
 		}
 
 		//*********************************************************************

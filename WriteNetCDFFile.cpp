@@ -15,7 +15,6 @@
 
 //*****************************************************************************
 const std::string s_time_name 			  ("time");
-const std::string s_level_name 			  ("z");
 const std::string s_latitude_name         ("latitude");
 const std::string s_longitude_name        ("longitude");
 const std::string s_global_latitude_name  ("global_latitude");
@@ -87,6 +86,33 @@ void CreateTimeDims(NcFile& x_nc_file,
 
 //*****************************************************************************
 
+std::string GetLevelName(NcFile& x_nc_file, const Level& x_lev, 
+						 const VarLevTrans& x_var_lev_trans, int i_size)
+{
+	// get the attribute list
+	const AttributeList& x_att_list = x_var_lev_trans.GetLevelAttributes(x_lev.GetType(), i_size);
+	std::string s_base_name = "";
+	// create the name of the dimension - now in the attribute list
+	if (x_att_list.HasAttribute("out_name"))
+		s_base_name = x_att_list.GetAttribute("out_name").GetValue();
+	else
+		s_base_name = "Z";		
+
+	// check whether it exists in the file already
+	int i_v = 1;
+	std::string s_lev_dim_name = s_base_name + "_0";
+	// fail silently as we're searching for names
+	NcError x_err(NcError::silent_nonfatal);		
+	while (x_nc_file.get_var(s_lev_dim_name.c_str()) != NULL)
+	{
+		s_lev_dim_name = s_base_name + "_" + ToString(i_v);
+		i_v ++;
+	}
+	return s_lev_dim_name;
+}
+
+//*****************************************************************************
+
 void CreateLevelDims(NcFile& x_nc_file,
 					 std::list<Series<Level> >& x_ls,
 					 const VarLevTrans& x_var_lev_trans)
@@ -100,23 +126,18 @@ void CreateLevelDims(NcFile& x_nc_file,
 		// get the time series as a series of floating point values
 		std::list<float> x_ls_vals = it_ls->GetValues();
 
-		// create the name of the dimension
-		std::string s_lev_dim_name(s_level_name);
-		s_lev_dim_name += ToString(it_ls->GetID());
-
+		// get the level
+		Level& x_lev = it_ls->Get().front();
 		// and create the dimension
 		NcDim* px_dim = NULL;
-		px_dim = x_nc_file.add_dim(s_lev_dim_name.c_str(), 
-								   x_ls_vals.size());
-
+		std::string s_lev_dim_name = GetLevelName(x_nc_file, x_lev, x_var_lev_trans, it_ls->Size());
+		x_lev.SetName(s_lev_dim_name);
+		px_dim = x_nc_file.add_dim(s_lev_dim_name.c_str(), x_ls_vals.size());
 		// Now add the variable corresponding to the dimension
-        NcVar* px_var = x_nc_file.add_var(s_lev_dim_name.c_str(),
-                                          ncFloat, px_dim);
-		// add attributes
-		const Level& x_lev = it_ls->Get().front();
-		// get the attribute list
-		const AttributeList& x_att_list = x_var_lev_trans.GetLevelAttributes(x_lev.GetType());
+        NcVar* px_var = x_nc_file.add_var(s_lev_dim_name.c_str(), ncFloat, px_dim);
 
+		// add attributes
+		const AttributeList& x_att_list = x_var_lev_trans.GetLevelAttributes(x_lev.GetType(), it_ls->Size());
 		px_var->add_att("axis", "Z");
 		// check it was returned
 		if (x_att_list.GetName() != "NULL")
@@ -297,8 +318,9 @@ void CreateRegionDims(NcFile& x_nc_file, std::list<Region>& x_rs)
 
 //*****************************************************************************
 
-void GetDimensions(NcFile& x_nc_file, Variable* px_var, NcDim*& px_lond,
-				   NcDim*& px_latd, NcDim*& px_zd, NcDim*& px_td)
+void GetDimensions(NcFile& x_nc_file, Variable* px_var, 
+				   std::list<Series<Level> >* px_levs,
+				   NcDim*& px_lond, NcDim*& px_latd, NcDim*& px_zd, NcDim*& px_td)
 {
 	// get the (already defined) dimensions for a variable
 	std::string s_lat_name(s_latitude_name);
@@ -307,9 +329,12 @@ void GetDimensions(NcFile& x_nc_file, Variable* px_var, NcDim*& px_lond,
 	s_lon_name += ToString(px_var->GetRegionID());
 	std::string s_t_name(s_time_name);
 	s_t_name += ToString(px_var->GetTimeID());
-	std::string s_l_name(s_level_name);
-	s_l_name += ToString(px_var->GetLevelID());
-
+	int i_lev_idx = px_var->GetLevelID();
+	std::string s_l_name = "";
+	for (std::list<Series<Level> >::iterator it_lev = px_levs->begin();
+		 it_lev != px_levs->end(); it_lev++)
+		if (it_lev->GetID() == i_lev_idx)
+			s_l_name = it_lev->Get().front().GetName();
 	px_lond = x_nc_file.get_dim(s_lon_name.c_str());
 	px_latd = x_nc_file.get_dim(s_lat_name.c_str());
 	px_td   = x_nc_file.get_dim(s_t_name.c_str());
@@ -422,6 +447,7 @@ std::string GetCellMethod(int i_proc_code)
 //*****************************************************************************
 
 void CreateVariables(NcFile& x_nc_file, std::list<Variable>& x_var_list,
+                     std::list<Series<Level> >& x_lev_list,
                      const VarLevTrans& x_var_lev_trans)
 {
 	// create the variables from the var list
@@ -431,7 +457,7 @@ void CreateVariables(NcFile& x_nc_file, std::list<Variable>& x_var_list,
 	{
 		// get the dimensions
 		NcDim *px_lond, *px_latd, *px_td, *px_zd;
-		GetDimensions(x_nc_file, &*(it_var_list), 
+		GetDimensions(x_nc_file, &*(it_var_list), &x_lev_list,
 					  px_lond, px_latd, px_zd, px_td);
 		// get the variable type
 		NcType i_type = ncFloat;
@@ -552,7 +578,8 @@ void CreateVariables(NcFile& x_nc_file, std::list<Variable>& x_var_list,
 
 //*****************************************************************************
 
-void WriteVariables(NcFile& x_nc_file, std::list<Variable>& x_var_list)
+void WriteVariables(NcFile& x_nc_file, std::list<Variable>& x_var_list, 
+					std::list<Series<Level> >& x_lev_list)
 {
     // write to the variables in the var list
     std::list<Variable>::iterator it_var_list;
@@ -561,7 +588,7 @@ void WriteVariables(NcFile& x_nc_file, std::list<Variable>& x_var_list)
     {
         // get the dimensions
         NcDim *px_lond, *px_latd, *px_td, *px_zd;
-        GetDimensions(x_nc_file, &*(it_var_list),
+        GetDimensions(x_nc_file, &*(it_var_list), &x_lev_list,
                       px_lond, px_latd, px_zd, px_td);
 
         // now write the data varfield by varfield
@@ -575,7 +602,6 @@ void WriteVariables(NcFile& x_nc_file, std::list<Variable>& x_var_list)
 
 		// get the previously created variable
 		NcVar* px_var = it_var_list->GetNcVar();
-
 		// write the data
         for (it_vf = x_vf.begin(); it_vf != x_vf.end(); it_vf++)
         {
@@ -769,8 +795,8 @@ int WriteNetCDFFile(std::string s_output_file_name,
 	CreateTimeDims(x_nc_file, x_min_ts, x_ref_time);
 	CreateLevelDims(x_nc_file, x_min_lev, x_var_lev_trans);
 	CreateRegionDims(x_nc_file, x_min_reg);
-	CreateVariables(x_nc_file, x_var_list, x_var_lev_trans);
-	WriteVariables(x_nc_file, x_var_list);
+	CreateVariables(x_nc_file, x_var_list, x_min_lev, x_var_lev_trans);
+	WriteVariables(x_nc_file, x_var_list, x_min_lev);
 
 	x_nc_file.close();
 	return 0;

@@ -79,8 +79,23 @@ float Level::GetValue(void) const
 void Level::Print(void) const
 {
 	std::cout << i_levtype << "  " << f_value << std::endl;
-	if (i_levtype == 9)
+	if (i_levtype == 9 || i_levtype == 129)
 		std::cout << "\t" << f_acoeff << " " << f_bcoeff << " " << f_p0 << std::endl;
 }
 
 //*****************************************************************************
+
+void Level::SetName(std::string name)
+{
+	s_lev_name = name;
+}
+
+//*****************************************************************************
+
+std::string Level::GetName(void)
+{
+	return s_lev_name;
+}
+		
+//*****************************************************************************
+		

@@ -8,11 +8,13 @@
 #ifndef TO_STRING_H
 #define TO_STRING_H
 
+#include <string>
 #include <sstream>
+#include <iostream>
 
-template <class T>
-inline std::string ToString (const T& t, int i_field_width=0, 
-							 char c_fill_char=' ')
+template <typename T>
+std::string ToString (T t, int i_field_width=0, 
+					  char c_fill_char=' ')
 {
 	std::stringstream ss;
 	if (i_field_width > 0)
@@ -26,8 +28,8 @@ inline std::string ToString (const T& t, int i_field_width=0,
 
 //*****************************************************************************
 
-template <class T>
-inline T FromString(const std::string& s)
+template <typename T>
+T FromString(const std::string& s)
 {
 	std::istringstream is(s);
 	T t;

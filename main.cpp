@@ -33,7 +33,7 @@ int main(int argc, char** argv)
 		TCLAP::ValueArg<std::string> x_gatts_file_arg("g", "global_atts", "Global attributes file name", false, "", "string");
 		cmd.add(x_gatts_file_arg);
 		// xml file containing variable definitions 
-		TCLAP::ValueArg<std::string> x_xml_file_arg("x", "xmlfile", "XML file name containing variable definitions", false, "cf_metadata_translations_precis.xml", "string");
+		TCLAP::ValueArg<std::string> x_xml_file_arg("x", "xmlfile", "XML file name containing variable definitions", true, "xml_file", "string");
 		cmd.add(x_xml_file_arg);
 		// xml file containing packing information
 		TCLAP::ValueArg<std::string> x_pack_file_arg("p", "packfile", "XML file name containing information about which variables are to be packed", false, "", "string");

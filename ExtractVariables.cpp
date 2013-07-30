@@ -54,23 +54,18 @@ Level ExtractLevel(UM_WORD* px_fixhdr, UM_WORD* px_pphdrs, int idx)
     UM_WORD i_levtype = ReadValueFrom2D(px_fixhdr, px_pphdrs, PPHDR_IDX, 25, idx);
     i_raw = ReadValueFrom2D(px_fixhdr, px_pphdrs, PPHDR_IDX, 51, idx);
     float f_blev = RAW_TO_FLOAT(i_raw);  // B value or absolute value
+	int i_pseudo_lev = ReadValueFrom2D(px_fixhdr, px_pphdrs, PPHDR_IDX, 42, idx);
 
     Level x_level;
     // convert hybrid coordinates
+    i_raw = ReadValueFrom2D(px_fixhdr, px_pphdrs, PPHDR_IDX, 53, idx);
+    float f_bhlev = RAW_TO_FLOAT(i_raw); // A value of level
     if (i_levtype == 9)
-    {
-        i_raw = ReadValueFrom2D(px_fixhdr, px_pphdrs, PPHDR_IDX, 53, idx);
-        float f_bhlev = RAW_TO_FLOAT(i_raw); // A value of level        
         x_level.Set(i_levtype, f_bhlev, f_blev, 1e5);
-    }
-	else if (i_levtype == 0)
-	{
-		// get the pseudo level number
-		i_raw = ReadValueFrom2D(px_fixhdr, px_pphdrs, PPHDR_IDX, 42, idx);
-		x_level.Set(i_levtype, float(i_raw));
-	}
-    else
-        x_level.Set(i_levtype, f_blev);
+    if (i_pseudo_lev != 0)
+		x_level.Set(i_levtype, i_pseudo_lev);
+	else
+		x_level.Set(i_levtype, f_blev);
     return x_level;
 }
 

@@ -164,7 +164,7 @@ const AttributeList& VarLevTrans::GetVariableAttributes(int i_stash_code) const
 
 //*****************************************************************************
 
-AttributeList VarLevTrans::GetLevelAttributes(int i_level_type) const
+AttributeList VarLevTrans::GetLevelAttributes(int i_level_type, int i_size) const
 {
     // this now switches on level type rather than relying on xml
     AttributeList x_att_list("Level");
@@ -173,13 +173,18 @@ AttributeList VarLevTrans::GetLevelAttributes(int i_level_type) const
         case 0:
         {
             Attribute x_std_name_att("standard_name", "unspecified");
+            Attribute x_out_name_att("out_name", "unspecified");
             x_att_list.Add(x_std_name_att);
+            x_att_list.Add(x_out_name_att);
         }
+        break;
 		case 1:
 		{
 		    Attribute x_std_name_att("standard_name", "height");
 			Attribute x_dir_att("direction", "up");
 			Attribute x_units_att("units", "m");
+            Attribute x_out_name_att("out_name", "height");
+            x_att_list.Add(x_out_name_att);
 			x_att_list.Add(x_std_name_att);
 			x_att_list.Add(x_units_att);
 			x_att_list.Add(x_dir_att);
@@ -188,13 +193,17 @@ AttributeList VarLevTrans::GetLevelAttributes(int i_level_type) const
 		case 5:
 		{
 			Attribute x_std_name_att("standard_name", "boundary_layer_height");
-			x_att_list.Add(x_std_name_att);		
+			x_att_list.Add(x_std_name_att);
+            Attribute x_out_name_att("out_name", "boundary_layer");
+            x_att_list.Add(x_out_name_att);
 		}
 		break;
 		case 6:
 		{
 			Attribute x_std_name_att("standard_name", "non_dimensional_soil_level");
 			x_att_list.Add(x_std_name_att);
+            Attribute x_out_name_att("out_name", "soil_level");
+            x_att_list.Add(x_out_name_att);
 		}
 		break;
     	case 8:
@@ -205,6 +214,8 @@ AttributeList VarLevTrans::GetLevelAttributes(int i_level_type) const
 			x_att_list.Add(x_std_name_att);
 			x_att_list.Add(x_units_att);
 			x_att_list.Add(x_dir_att);
+            Attribute x_out_name_att("out_name", "pressure");
+            x_att_list.Add(x_out_name_att);
         }
 	    break;
         case 9:
@@ -213,6 +224,8 @@ AttributeList VarLevTrans::GetLevelAttributes(int i_level_type) const
 			Attribute x_dir_att("direction", "down");
 			x_att_list.Add(x_std_name_att);
 			x_att_list.Add(x_dir_att);
+            Attribute x_out_name_att("out_name", "hybrid_pressure");
+            x_att_list.Add(x_out_name_att);
 		}
 		break;
 		case 10:
@@ -221,6 +234,8 @@ AttributeList VarLevTrans::GetLevelAttributes(int i_level_type) const
 			Attribute x_dir_att("direction", "down");
 			x_att_list.Add(x_std_name_att);
 			x_att_list.Add(x_dir_att);
+            Attribute x_out_name_att("out_name", "sigma");
+            x_att_list.Add(x_out_name_att);
 		}
 		break;
         case 65:
@@ -229,6 +244,8 @@ AttributeList VarLevTrans::GetLevelAttributes(int i_level_type) const
 			Attribute x_dir_att("direction",  "down");
 			x_att_list.Add(x_std_name_att);
 			x_att_list.Add(x_dir_att);
+            Attribute x_out_name_att("out_name", "hybrid_height");
+            x_att_list.Add(x_out_name_att);
 		}
 		break;		
 		case 128:
@@ -239,6 +256,8 @@ AttributeList VarLevTrans::GetLevelAttributes(int i_level_type) const
 			x_att_list.Add(x_std_name_att);
 			x_att_list.Add(x_units_att);
 			x_att_list.Add(x_dir_att);
+            Attribute x_out_name_att("out_name", "mean_sea_level");
+            x_att_list.Add(x_out_name_att);
 		}
 		break;
 		case 129:
@@ -249,6 +268,16 @@ AttributeList VarLevTrans::GetLevelAttributes(int i_level_type) const
 			x_att_list.Add(x_std_name_att);
 			x_att_list.Add(x_units_att);
 			x_att_list.Add(x_dir_att);
+			if (i_size == 1)
+			{
+	            Attribute x_out_name_att("out_name", "surface");
+	            x_att_list.Add(x_out_name_att);
+	        }
+	        else
+	        {
+	            Attribute x_out_name_att("out_name", "pseudo");
+	            x_att_list.Add(x_out_name_att);
+	        }
 		}
 		break;
 		case 130:
@@ -259,35 +288,48 @@ AttributeList VarLevTrans::GetLevelAttributes(int i_level_type) const
 			x_att_list.Add(x_std_name_att);
 			x_att_list.Add(x_units_att);
 			x_att_list.Add(x_dir_att);
+            Attribute x_out_name_att("out_name", "tropopause");
+            x_att_list.Add(x_out_name_att);
 		}
 		break;
 		case 131:
 		{
 			Attribute x_std_name_att("standard_name", "maximum_wind_level");
 			x_att_list.Add(x_std_name_att);
+            Attribute x_out_name_att("out_name", "max_wind");
+            x_att_list.Add(x_out_name_att);
 		}
 		break;
 		case 132:
 		{
 			Attribute x_std_name_att("standard_name", "freezing_level");
 			x_att_list.Add(x_std_name_att);
+            Attribute x_out_name_att("out_name", "freezing_level");
+            x_att_list.Add(x_out_name_att);
 		}
 		break;
 		case 133:
 		{
 			Attribute x_std_name_att("standard_name", "top_of_atmosphere");
 			x_att_list.Add(x_std_name_att);		
+            Attribute x_out_name_att("out_name", "toa");
+            x_att_list.Add(x_out_name_att);
 		}
+		break;
 		case 142:
 		{
 			Attribute x_std_name_att("standard_name", "upper_hybrid_level");
 			x_att_list.Add(x_std_name_att);
+            Attribute x_out_name_att("out_name", "upper_hybrid_level");
+            x_att_list.Add(x_out_name_att);
         }
 		break;
 		case 143:
 		{
 			Attribute x_std_name_att("standard_name", "lower_hybrid_level");
 			x_att_list.Add(x_std_name_att);
+            Attribute x_out_name_att("out_name", "lower_hybrid_level");
+            x_att_list.Add(x_out_name_att);
 		}
 		break;
 		case 176:
@@ -296,6 +338,8 @@ AttributeList VarLevTrans::GetLevelAttributes(int i_level_type) const
 			Attribute x_units_att("direction", "north");
 			x_att_list.Add(x_std_name_att);
 			x_att_list.Add(x_units_att);
+            Attribute x_out_name_att("out_name", "latitude");
+            x_att_list.Add(x_out_name_att);
 		}
 		break;
 		case 177:
@@ -304,17 +348,21 @@ AttributeList VarLevTrans::GetLevelAttributes(int i_level_type) const
 			Attribute x_units_att("direction", "east");
 			x_att_list.Add(x_std_name_att);
 			x_att_list.Add(x_units_att);
+            Attribute x_out_name_att("out_name", "longitude");
+            x_att_list.Add(x_out_name_att);
 		}
 		break;
 		case 275:
 		{
 			Attribute x_std_name_att("standard_name", "canopy_height");
 			x_att_list.Add(x_std_name_att);		
+            Attribute x_out_name_att("out_name", "canopy_height");
+            x_att_list.Add(x_out_name_att);
 		}
 		break;
 		default:
 		    x_att_list = x_null_list;
-		    std::cout << i_level_type << std::endl;
+		    std::cout << "Error: " << i_level_type << " not supported" << std::endl;
 	}
 	return x_att_list;
 }
