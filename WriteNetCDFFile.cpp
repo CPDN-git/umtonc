@@ -12,6 +12,7 @@
 #include "AttributeList.h"
 #include "VarLevTrans.h"
 #include "GlobalAtts.h"
+#include "math.h"
 
 //*****************************************************************************
 const std::string s_time_name 			  ("time");
@@ -493,28 +494,31 @@ void CreateVariables(NcFile& x_nc_file, std::list<Variable>& x_var_list,
 				px_var->add_att("_FillValue", mv);
 			break;
 			case 1:
+                mv = (pow(256, 1)-1) * 0.5;
 				px_var->add_att("_FillValue", (ncbyte)(mv));
-				px_var->add_att("_Unsigned", "true");
 			break;
 			case 2:
+                mv = (pow(256, 2)-1) * 0.5;
 				px_var->add_att("_FillValue", (short)(mv));
-				px_var->add_att("_Unsigned", "true");
 			break;
 			case 4:
-				px_var->add_att("_FillValue", mv);
+                mv = it_var_list->GetMissingValue();
+				px_var->add_att("_FillValue", (float)(mv));
 			break;
 		}
-		
 		// calculate and add scaling value and offset value
 		float f_mks = it_var_list->GetMKSValue();
 		float f_scl = it_var_list->GetScalingFactor();
 		float f_off = it_var_list->GetOffset();
-		if (f_mks != 0.0)
-			f_scl = f_scl * f_mks;
-		if (f_scl != 1.0)
+        int   i_pack = it_var_list->GetPackingBytes();
+		// ipack = 4 will just cast to a float
+        if (i_pack != 0 && i_pack != 4)
+		{
+    		if (f_mks != 0.0)
+	    		f_scl = f_scl * f_mks;
 			px_var->add_att("scale_factor", f_scl);
-		if (f_off != 0.0)
-			px_var->add_att("add_offset", f_off);
+			px_var->add_att("add_offset", f_off + pow(256, i_pack)*0.5*f_scl);
+		}
 
 		// if the grid is rotated, then it has an extra attribute
 		if (it_var_list->GetGridType() > 100)

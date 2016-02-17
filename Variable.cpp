@@ -19,8 +19,8 @@ Variable::Variable(VarField x_varfield)
 	i_time_id   = -1;
 	i_region_id = -1;
 	
-	f_sf = 1.0;
-	f_off = 0.0;
+	f_sf = 2e20;
+	f_off = 2e20;
 	i_npack_bytes = 0;
 }
 

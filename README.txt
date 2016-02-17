@@ -102,7 +102,7 @@ description and STASH id for that variable.
 The current document used for this is: cf_metadata_translations_precis.xml
 
 =====================================================================================
-XML Translation Document
+Data Packing Document
 =====================================================================================
 
 umtonc has the ability to reduce data usage in 4 ways.  These are cropping a 
@@ -123,7 +123,7 @@ format:
 
 Variables to be packed are identified by their STASH section and id within 
 that section.  The attributes (pack, crop, skip and avg) can be applied to 
-any STASH variable, and moe than one attribute can be applied to each 
+any STASH variable, and more than one attribute can be applied to each 
 variable.  The attributes have the following syntax:
 
 <pack=n> pack the variable into n bytes.  Current 1 (byte), 2 (short int) 

@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<pack_data>
+    <!- Packing data example - possible attributes are:>
+    <!- pack, skip, crop and avg>
+    <item section='1' id='201' pack='0'/>
+    <item section='1' id='207' pack='1'/>
+    <item section='1' id='208' pack='1'/>
+    <item section='1' id='235' pack='2'/>
+    <item section='2' id='201' pack='1'/>
+    <item section='2' id='204' pack='1'/>
+    <item section='2' id='205' pack='2'/>
+    <item section='2' id='207' pack='1'/>
+    <item section='3' id='217' pack='2'/>
+    <item section='3' id='225' pack='1'/>
+    <item section='3' id='226' pack='2'/>
+    <item section='3' id='234' pack='1'/>
+    <item section='3' id='236' pack='1'/>
+    <item section='3' id='237' pack='4'/>
+    <item section='3' id='245' pack='1'/>
+    <item section='3' id='249' pack='2'/>
+    <item section='3' id='250' pack='1'/>
+    <item section='3' id='295' pack='2'/>
+    <item section='3' id='296' pack='1'/>
+    <item section='3' id='297' pack='1'/>
+    <item section='3' id='298' pack='1'/>
+    <item section='5' id='216' pack='1'/>
+    <item section='8' id='208' pack='4'/>
+    <item section='8' id='223' pack='1'/>
+    <item section='8' id='229' pack='4'/>
+    <item section='8' id='230' pack='1'/>
+    <item section='8' id='231' pack='2'/>
+    <item section='8' id='234' pack='1'/>
+    <item section='8' id='235' pack='4'/>
+    <item section='15' id='201' pack='1'/>
+    <item section='15' id='202' pack='1'/>
+    <item section='15' id='226' pack='1'/>
+    <item section='16' id='202' pack='1'/>
+    <item section='16' id='202' pack='1'/>
+    <item section='16' id='203' pack='1'/>   
+    <item section='16' id='222' pack='1'/>
+    <item section='0' id='23' pack='1'/>
+    <item section='0' id='31' pack='1'/>
+</pack_data>
+

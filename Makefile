@@ -7,7 +7,7 @@ OUTPUT_RELEASE_NAME = um2nc
 
 # Compiler variables
 CPP = g++
-INCLUDE_DIRS = tclap/include/
+INCLUDE_DIRS = -Itclap/include/ -Itinyxml/include
 LIBRARY_DIRS = ./
 
 DEBUG_FLAGS = -Wno-deprecated -O0 -pg -g -Wall -DTIXML_USE_STL -include cstdio
@@ -21,10 +21,10 @@ UNAME := $(shell uname)
 ifeq ($(UNAME), Darwin)
 LD = g++ -Wunused $(FLAGS)
 else
-LD = g++ -Wunused --static $(FLAGS)
+LD = g++ -Wunused $(FLAGS) #--static $(FLAGS)
 endif
 
-LIBS = -L/usr/local/lib -lnetcdf_c++ -lnetcdf -lstdc++
+LIBS = -L/usr/local/lib -lnetcdf_c++ -lnetcdf -lhdf5 -lstdc++ #-lpthread -lz -lrt -lcurl -lm -lssl -lcryptopp
 
 ALL_DEPEND = RawConvert.h
 
@@ -33,18 +33,19 @@ OBJS = main.o ConvertFile.o ReadUMFile.o Region.o Level.o TimeField.o \
 	   MinimiseDimensions.o Rot2Global.o VarLevTrans.o Attribute.o \
 	   AttributeList.o GlobalAtts.o Packing.o
 
-TINY_XML_OBJS = tinyxml/tinyxml.o \
-				tinyxml/tinystr.o \
-				tinyxml/tinyxmlerror.o \
-				tinyxml/tinyxmlparser.o
+#TINY_XML_OBJS = tinyxml/tinyxml.o \
+#				tinyxml/tinystr.o \
+#				tinyxml/tinyxmlerror.o \
+#				tinyxml/tinyxmlparser.o
+TINY_XML_OBJS = -ltinyxml
 
 # cpp file do all
 %.o: %.cpp %.h $(ALL_DEPEND)
-	$(CPP) $(FLAGS) -I$(INCLUDE_DIRS) -c $<
+	$(CPP) $(FLAGS) $(INCLUDE_DIRS) -c $<
 %.o: %.cpp $(ALL_DEPEND)
-	$(CPP) $(FLAGS) -I$(INCLUDE_DIRS) -c $<
+	$(CPP) $(FLAGS) $(INCLUDE_DIRS) -c $<
 %.o: %.c
-	$(CPP) $(FLAGS) -I$(INCLUDE_DIRS) -c $<
+	$(CPP) $(FLAGS) $(INCLUDE_DIRS) -c $<
 
 $(OUTPUT_RELEASE_NAME): $(OBJS)
 	$(LD) $(OBJS) $(TINY_XML_OBJS) $(LIBS) -o $(OUT_DIR)$(OUTPUT_RELEASE_NAME)

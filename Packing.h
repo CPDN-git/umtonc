@@ -24,12 +24,18 @@
 
 #include <string>
 #include <list>
-#include "tinyxml/tinyxml.h"
+//#include "tinyxml/tinyxml.h"
+#include "tinyxml.h"
 #include "Variable.h"
 
 struct PackDetails
 {
     PackDetails(void) : i_stash(0), i_skip(0), i_crop(0), i_avg(0), i_pack(0){};
+    bool operator==(const PackDetails& rhs)
+    {
+    	return (i_stash == rhs.i_stash && i_id == rhs.i_id && i_skip == rhs.i_skip &&
+                i_crop == rhs.i_crop && i_avg == rhs.i_avg && i_pack == rhs.i_pack);
+    }
     int i_stash;
     int i_id;
     int i_skip;

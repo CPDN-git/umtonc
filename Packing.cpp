@@ -8,6 +8,7 @@
 
 #include <math.h>
 #include "Packing.h"
+#include <algorithm>
 
 extern UM_WORD FLOAT_TO_RAW(float x);
 extern float RAW_TO_FLOAT(unsigned int x);
@@ -71,7 +72,7 @@ bool Packing::LoadAttributes(void)
 	        // packing amount
 	        i_ret = px_cur->QueryIntAttribute(s_pack_name, &i_int);
 	        // check value - can only be 1, 2 or 4
-	        if (i_int != 1 && i_int != 2 && i_int != 4)
+	        if (i_int != 0 && i_int != 1 && i_int != 2 && i_int != 4)
 	        {
 	            error("Unsupported byte packing value");
 	            return false;
@@ -90,9 +91,10 @@ bool Packing::LoadAttributes(void)
 	        i_ret = px_cur->QueryIntAttribute(s_avg_name, &i_int);
 	        if (i_ret == TIXML_SUCCESS)
 	            x_pack_details.i_avg = i_int;
-	        // add to list
-	        x_pack_details_list.push_back(x_pack_details);
-	    }
+            // add to the list if not already present
+            if (find(x_pack_details_list.begin(), x_pack_details_list.end(), x_pack_details) == x_pack_details_list.end())
+     	        x_pack_details_list.push_back(x_pack_details);
+		}
 	    else
 	    {
 	        error("Error in XML file: " + px_cur->ValueStr());
@@ -113,7 +115,9 @@ void BytePackVariable(Variable& x_variable, int i_nbytes)
     
     float min = x_variable.GetMinimumValue();
     float max = x_variable.GetMaximumValue();
-    float sf = (max-min) / pow(256, i_nbytes);
+    float sf = (max-min) / (pow(256, i_nbytes)-2);
+	float pmv = pow(256, i_nbytes)-1;				// packed missing value
+	float offset = pow(256, i_nbytes)*0.5;
     
     // loop through the var_fields in the x_variable
     std::list<VarField>& x_var_fields = x_variable.GetVarFields();
@@ -133,8 +137,8 @@ void BytePackVariable(Variable& x_variable, int i_nbytes)
             if (v != x_variable.GetMissingValue())
             {
                 // apply the offset and scaling - round to nearest integer
-                float v2 = (v - min) * 1.0 / sf;
-                v2 = (float)((int)(v2 + 0.5));
+                float v2 = (v - min) * 1.0 / sf - offset;
+                v2 = (float)((int)(v2));
                 // transform back to a RAW
                 int r = FLOAT_TO_RAW(v2);
                 // put this back in at the same position
@@ -142,14 +146,17 @@ void BytePackVariable(Variable& x_variable, int i_nbytes)
             }
             else
             {
-                px_data[w] = FLOAT_TO_RAW(0.0);
+                px_data[w] = FLOAT_TO_RAW(pmv);
             }
         }
     }
     // set the packing bytes, offset and scaling factor
-    x_variable.SetPackingBytes(i_nbytes);
-    x_variable.SetScalingFactor(sf);
-    x_variable.SetOffset(min);    
+	if (i_nbytes != 0 && i_nbytes != 4)
+	{
+	    x_variable.SetPackingBytes(i_nbytes);
+    	x_variable.SetScalingFactor(sf);
+    	x_variable.SetOffset(min);
+	}
 }
 
 //*****************************************************************************
@@ -273,7 +280,7 @@ void Packing::PackVariable(Variable& x_variable)
         {
             // this stash code is in the list of codes to pack, so figure out
             // what to do!
-            if (it_pack_list->i_pack != 0)
+            if (it_pack_list->i_pack != 0 && it_pack_list->i_pack != 4)
                 BytePackVariable(x_variable, it_pack_list->i_pack);
             if (it_pack_list->i_crop != 0)
                 CropVariable(x_variable, it_pack_list->i_crop);
