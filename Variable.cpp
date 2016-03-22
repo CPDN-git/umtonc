@@ -26,13 +26,23 @@ Variable::Variable(VarField x_varfield)
 
 //*****************************************************************************
 
-bool Variable::BelongsVF(const VarField& x_varfield) const
+bool Variable::BelongsVF(VarField& x_varfield)
 {
 	bool b_belongs = false;
-	std::list<VarField>::const_iterator it = x_varfields.begin();
+	std::list<VarField>::iterator it = x_varfields.begin();
 	if (it->InGroup(x_varfield))
 		b_belongs = true;
-	return b_belongs;
+	// check whether the time matches any in the varfields already, excluding
+	// the same time on different levels.  If it does  then create a new group of varfields
+    bool b_time_match = false;
+    bool b_level_match = false;
+	for (it = x_varfields.begin(); it != x_varfields.end(); it++)
+	{
+	    b_level_match = it->GetLevel().GetValue() == x_varfield.GetLevel().GetValue();
+	    b_time_match |= (it->GetTimeField().GetValue() == x_varfield.GetTimeField().GetValue() && b_level_match);
+	}
+	    
+	return b_belongs && (!b_time_match);
 }
 
 //*****************************************************************************

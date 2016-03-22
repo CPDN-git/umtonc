@@ -10,11 +10,11 @@ CPP = g++
 INCLUDE_DIRS = -Itclap/include/ -Itinyxml/include
 LIBRARY_DIRS = ./
 
-DEBUG_FLAGS = -Wno-deprecated -O0 -pg -g -Wall -DTIXML_USE_STL -include cstdio
+DEBUG_FLAGS = -Wno-deprecated -O0 -pg -g -Wall -DTIXML_USE_STL -include cstdio -D_GLIBCXX_DEBUG
 RELEASE_FLAGS = -Wno-deprecated -O3 -Wall -DTIXML_USE_STL -fno-strict-aliasing -include cstdio
 
-FLAGS = $(DEBUG_FLAGS)
-#FLAGS = $(RELEASE_FLAGS)
+#FLAGS = $(DEBUG_FLAGS)
+FLAGS = $(RELEASE_FLAGS)
 UNAME := $(shell uname)
 
 # Linker variables - cannot static link in Mac OS X / Darwin

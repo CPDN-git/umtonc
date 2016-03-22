@@ -17,7 +17,7 @@ class Variable
 	public:
 		Variable(VarField x_varfield);
 		// checks whether a varfield belongs to this variable
-		bool BelongsVF(const VarField& x_varfield) const;
+		bool BelongsVF(VarField& x_varfield);
 		void AddVF(VarField x_varfield);
 		std::list<VarField>& GetVarFields(void);
 		
