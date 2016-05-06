@@ -33,16 +33,18 @@ bool Variable::BelongsVF(VarField& x_varfield)
 	if (it->InGroup(x_varfield))
 		b_belongs = true;
 	// check whether the time matches any in the varfields already, excluding
-	// the same time on different levels.  If it does  then create a new group of varfields
-    bool b_time_match = false;
-    bool b_level_match = false;
+	// the same time on different levels.  If it does then create a new group of varfields
+    bool b_match = false;
+    bool b_level = false;
+    bool b_time  = false;
 	for (it = x_varfields.begin(); it != x_varfields.end(); it++)
 	{
-	    b_level_match = it->GetLevel().GetValue() == x_varfield.GetLevel().GetValue();
-	    b_time_match |= (it->GetTimeField().GetValue() == x_varfield.GetTimeField().GetValue() && b_level_match);
+	    b_level = it->GetLevel().GetValue() == x_varfield.GetLevel().GetValue();
+	    b_time  = it->GetTimeField().GetValue() == x_varfield.GetTimeField().GetValue();
+	    b_match |= b_level && b_time;
 	}
 	    
-	return b_belongs && (!b_time_match);
+	return b_belongs && (!b_match);
 }
 
 //*****************************************************************************

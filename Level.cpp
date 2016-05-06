@@ -39,7 +39,7 @@ void Level::Set(int levtype, float acoeff, float bcoeff, float p0)
 	f_acoeff = acoeff;
 	f_bcoeff = bcoeff;
 	f_p0 = p0;
-	f_value = f_bcoeff + f_acoeff / p0;
+	f_value = 1000.0*(f_bcoeff + f_acoeff / p0);
 }
 
 //*****************************************************************************

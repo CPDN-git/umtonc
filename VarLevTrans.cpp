@@ -224,7 +224,7 @@ AttributeList VarLevTrans::GetLevelAttributes(int i_level_type, int i_size) cons
 			Attribute x_dir_att("direction", "down");
 			x_att_list.Add(x_std_name_att);
 			x_att_list.Add(x_dir_att);
-            Attribute x_out_name_att("out_name", "hybrid_pressure");
+            Attribute x_out_name_att("out_name", "hybrid_pressure_x1000");
             x_att_list.Add(x_out_name_att);
 		}
 		break;

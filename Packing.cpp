@@ -272,6 +272,8 @@ void Packing::PackVariable(Variable& x_variable)
 {
     // check in the pack list whether this variable should be packed or not
     int i_var_stash_code = x_variable.GetStashCode();
+    int n_rows = x_variable.GetVarFields().front().GetRegion().GetNRows();
+    int n_cols  = x_variable.GetVarFields().front().GetRegion().GetNCols();
     for (std::list<PackDetails>::iterator it_pack_list = x_pack_details_list.begin();
          it_pack_list != x_pack_details_list.end();
          it_pack_list++)
@@ -280,13 +282,14 @@ void Packing::PackVariable(Variable& x_variable)
         {
             // this stash code is in the list of codes to pack, so figure out
             // what to do!
-            if (it_pack_list->i_pack != 0 && it_pack_list->i_pack != 4)
+            // SNS Only do the Crop, Skip or Avg if the latitude or longitude dimension is less than the crop size.
+            if (it_pack_list->i_pack != 0)
                 BytePackVariable(x_variable, it_pack_list->i_pack);
-            if (it_pack_list->i_crop != 0)
+            if (it_pack_list->i_crop != 0 && n_rows > it_pack_list->i_crop && n_cols > it_pack_list->i_crop)
                 CropVariable(x_variable, it_pack_list->i_crop);
-            if (it_pack_list->i_skip != 0)
+            if (it_pack_list->i_skip != 0 && n_rows > it_pack_list->i_crop && n_cols > it_pack_list->i_crop)
                 SkipVariable(x_variable, it_pack_list->i_skip);
-            if (it_pack_list->i_avg != 0)
+            if (it_pack_list->i_avg != 0 && n_rows > it_pack_list->i_crop && n_cols > it_pack_list->i_crop)
                 AvgVariable(x_variable, it_pack_list->i_avg);
         }
     }
