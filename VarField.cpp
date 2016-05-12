@@ -9,12 +9,13 @@ extern float RAW_TO_FLOAT(unsigned int x);
 
 //*****************************************************************************
 
-VarField::VarField(int field_code, int stash_code, int field_type)
+VarField::VarField(int model_code, int field_code, int stash_code, int field_type)
          : px_data_as_byte(NULL), px_data_as_short(NULL)
 {
 	i_field_code = field_code;
 	i_stash_code = stash_code;
 	i_field_type = field_type;
+	i_model_code = model_code;
 	i_pack_code  = 0;    		// data packing code
 	i_proc_code  = 0;
 	f_bmdi		 = 0.0f;       	// missing value 
@@ -79,7 +80,8 @@ bool VarField::InGroup(const VarField& rhs) const
 	bool b_stash = (i_stash_code == rhs.i_stash_code);
 	bool b_levtype = (x_level.GetType() == rhs.x_level.GetType());
     bool b_proc_code = (i_proc_code == rhs.i_proc_code);
-	bool b_ret = b_mean_period & b_region & b_fc & b_stash & b_levtype & b_proc_code;
+    bool b_model_code = (i_model_code == rhs.i_model_code);
+	bool b_ret = b_mean_period & b_region & b_fc & b_stash & b_levtype & b_proc_code & b_model_code;
 	return b_ret;
 }
 
@@ -180,6 +182,13 @@ float VarField::GetMissingValue(void) const
 int VarField::GetStashCode(void) const
 {
 	return i_stash_code;
+}
+
+//*****************************************************************************
+
+int VarField::GetModelCode(void) const
+{
+    return i_model_code;
 }
 
 //*****************************************************************************

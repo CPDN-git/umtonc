@@ -16,17 +16,19 @@
 class AttributeList
 {
 	public:
-		AttributeList(std::string name);
+		AttributeList(std::string name, int i_model_id);
 		void Add(Attribute& x_att);
 		const std::list<Attribute>& Get(void) const;
 		const std::string& GetName(void) const;
+		const int GetModel(void) const;
 		bool operator == (const AttributeList& rhs) const;
 		bool HasAttribute(std::string name) const;
 		const Attribute& GetAttribute(std::string name) const;
 	
 	private:
 		std::list<Attribute> x_atts;
-		std::string s_name;		
+		std::string s_name;
+		int i_model_id;
 };
 
 #endif

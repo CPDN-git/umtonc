@@ -162,6 +162,13 @@ int Variable::GetStashCode(void) const
 
 //*****************************************************************************
 
+int Variable::GetModelCode(void) const
+{
+    return x_varfields.front().GetModelCode();
+}
+
+//*****************************************************************************
+
 float Variable::GetMissingValue(void) const
 {
 	return x_varfields.front().GetMissingValue();

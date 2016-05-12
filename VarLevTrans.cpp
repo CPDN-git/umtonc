@@ -32,7 +32,7 @@ const std::string s_stash_item_name("stash_item");
 
 //*****************************************************************************
 
-VarLevTrans::VarLevTrans(std::string s_xml_file_name) : x_null_list("NULL")
+VarLevTrans::VarLevTrans(std::string s_xml_file_name) : x_null_list("NULL",0)
 {
 	x_xml_doc.LoadFile(s_xml_file_name.c_str());
 }
@@ -73,7 +73,7 @@ void VarLevTrans::ProcessVariableAttributes(TiXmlElement* px_root_ele, int i_mod
 	                    
 	                // create an attribute list with this stash section and item
                     std::string s_att_list_name = ToString(i_section_number * 1000 + i_item_number);
-                    AttributeList x_att_list(s_att_list_name);
+                    AttributeList x_att_list(s_att_list_name, i_model_id);
             		Attribute x_stash_item_att(s_stash_item_name, ToString(i_item_number));
             		Attribute x_stash_sec_att(s_stash_section_name, ToString(i_section_number));
             		
@@ -148,14 +148,15 @@ bool VarLevTrans::LoadAttributes(void)
 
 //*****************************************************************************
 
-const AttributeList& VarLevTrans::GetVariableAttributes(int i_stash_code) const
+const AttributeList& VarLevTrans::GetVariableAttributes(int i_stash_code, int i_model_code) const
 {
 	// make a string from the stash list
 	std::string s_stash_code = ToString(i_stash_code);
 	// loop through and find the list
 	std::list<AttributeList>::const_iterator it;
 	for (it = x_var_att_list.begin(); it != x_var_att_list.end(); it++)
-		if (it->GetName() == s_stash_code)
+		if (it->GetName() == s_stash_code &&
+		    it->GetModel() == i_model_code)
 			return *it;
 
 	// if not found, return the null attribute list
@@ -167,7 +168,7 @@ const AttributeList& VarLevTrans::GetVariableAttributes(int i_stash_code) const
 AttributeList VarLevTrans::GetLevelAttributes(int i_level_type, int i_size) const
 {
     // this now switches on level type rather than relying on xml
-    AttributeList x_att_list("Level");
+    AttributeList x_att_list("Level", 0);       // model_id == 0 for any model
     switch (i_level_type)
     {
         case 0:

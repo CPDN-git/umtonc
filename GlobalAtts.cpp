@@ -9,7 +9,7 @@
 
 //*****************************************************************************
 
-GlobalAtts::GlobalAtts(void) : x_global_atts_list("global")
+GlobalAtts::GlobalAtts(void) : x_global_atts_list("global", 0)
 {
 	b_loaded = false;
 	i_max_size = 0;

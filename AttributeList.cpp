@@ -8,9 +8,10 @@
 
 //*****************************************************************************
 
-AttributeList::AttributeList(std::string name)
+AttributeList::AttributeList(std::string name, int model_id)
 {
 	s_name = name;
+	i_model_id = model_id;
 }
 
 //*****************************************************************************
@@ -32,6 +33,13 @@ const std::list<Attribute>& AttributeList::Get(void) const
 const std::string& AttributeList::GetName(void) const
 {
 	return s_name;
+}
+
+//*****************************************************************************
+
+const int AttributeList::GetModel(void) const
+{
+    return i_model_id;
 }
 
 //*****************************************************************************

@@ -22,7 +22,7 @@ class VarLevTrans
 	public:
 		VarLevTrans(std::string s_xml_file_name);
 		bool LoadAttributes(void);
-		const AttributeList& GetVariableAttributes(int i_stash_code) const;
+		const AttributeList& GetVariableAttributes(int i_stash_code, int i_model_code) const;
 		AttributeList GetLevelAttributes(int i_level_type, int i_size) const;
 
 	private:

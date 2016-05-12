@@ -372,7 +372,8 @@ std::string GetVarName(NcFile& x_nc_file, const Variable& x_var, const VarLevTra
 	// fail silently as we're searching for names
 	NcError x_err(NcError::silent_nonfatal);
 	std::string s_base_name;
-	const AttributeList& x_att_list =  x_var_lev_trans.GetVariableAttributes(x_var.GetStashCode());
+	const AttributeList& x_att_list =  x_var_lev_trans.GetVariableAttributes(x_var.GetStashCode(), 
+	                                                                         x_var.GetModelCode());
 	// create the var name - this is a CMOR name if the attribute "out_name" exists
 	if (x_att_list.HasAttribute("out_name"))
 		s_base_name = x_att_list.GetAttribute("out_name").GetValue();
@@ -537,7 +538,8 @@ void CreateVariables(NcFile& x_nc_file, std::list<Variable>& x_var_list,
 
 		// add the other attributes
 		int i_stash_code = it_var_list->GetStashCode();
-        const AttributeList& x_att_list = x_var_lev_trans.GetVariableAttributes(i_stash_code);
+		int i_model_code = it_var_list->GetModelCode();
+        const AttributeList& x_att_list = x_var_lev_trans.GetVariableAttributes(i_stash_code, i_model_code);
 		
         // check it was returned
         if (x_att_list.GetName() != "NULL")

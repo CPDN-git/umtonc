@@ -24,6 +24,7 @@ class Variable
 		int GetType(void) const;
 		int GetFieldCode(void) const;
 		int GetStashCode(void) const;
+		int GetModelCode(void) const;
 		int GetGridType(void);
 		int GetProcCode(void) const;
 		float GetMissingValue(void) const;

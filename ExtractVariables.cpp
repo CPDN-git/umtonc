@@ -102,6 +102,7 @@ VarField ExtractVarField(UM_WORD* px_fixhdr, UM_WORD* px_pphdrs,
     UM_WORD i_sc = ReadValueFrom2D(px_fixhdr, px_pphdrs, PPHDR_IDX, 41, idx);
     UM_WORD i_packc = ReadValueFrom2D(px_fixhdr, px_pphdrs, PPHDR_IDX, 20, idx);
 	UM_WORD i_procc = ReadValueFrom2D(px_fixhdr, px_pphdrs, PPHDR_IDX, 24, idx);
+	UM_WORD i_mod = px_fixhdr[1];   // get the model type
     UM_WORD i_raw;
     i_raw = ReadValueFrom2D(px_fixhdr, px_pphdrs, PPHDR_IDX, 62, idx);
     float f_bmdi = RAW_TO_FLOAT(i_raw);
@@ -115,7 +116,7 @@ VarField ExtractVarField(UM_WORD* px_fixhdr, UM_WORD* px_pphdrs,
         sampling_frequency = i_lbtim / 100;
 
     // create var and set pack code etc.
-    VarField x_varfield(i_fc, i_sc, i_ft);
+    VarField x_varfield(i_mod, i_fc, i_sc, i_ft);
     x_varfield.SetPackCode(i_packc);
     x_varfield.SetBMDI_MKS(f_bmdi, f_bmks);
 	x_varfield.SetProcCode(i_procc);

@@ -17,12 +17,13 @@
 class VarField
 {
 	public:
-		VarField(int field_code, int stash_code, int field_type);
+		VarField(int model_code, int field_code, int stash_code, int field_type);
 		~VarField(void);
 
 		int GetType(void) const;
 		int GetFieldCode(void) const;
 		int GetStashCode(void) const;
+		int GetModelCode(void) const;
 		int GetProcCode(void) const;
 		float GetMissingValue(void) const;
 		float GetMKSValue(void) const;
@@ -59,6 +60,7 @@ class VarField
 		int i_stash_code;
 		int i_pack_code;	// data packing code
 		int i_proc_code;	// processing code, mean, max, min, variance etc.
+		int i_model_code;   // code for the model 1=atmos, 2=ocean, 4=wave
 		float f_bmdi;		// missing value
 		float f_mks;		// scaling value
 		float f_sampling_freq;  // sampling frequency
